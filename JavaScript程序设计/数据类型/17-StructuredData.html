@@ -1,0 +1,1080 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>17-StructuredData · Bash Tutorial</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../styles/website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="18-数据类型进阶.html" />
+    
+    
+    <link rel="prev" href="16-KeyedCollection.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://yingyuk.github.io/tags/" target="_blank" class="custom-link">Yingyu Blog</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    JavaScript 程序设计
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" >
+            
+                <span>
+            
+                    
+                    数据类型
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" data-path="14-Error.html">
+            
+                <a href="14-Error.html">
+            
+                    
+                    14-Error
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2" data-path="15-TypedArray.html">
+            
+                <a href="15-TypedArray.html">
+            
+                    
+                    15-TypedArray
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.3" data-path="16-KeyedCollection.html">
+            
+                <a href="16-KeyedCollection.html">
+            
+                    
+                    16-KeyedCollection
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.1.4" data-path="17-StructuredData.html">
+            
+                <a href="17-StructuredData.html">
+            
+                    
+                    17-StructuredData
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.5" data-path="18-数据类型进阶.html">
+            
+                <a href="18-数据类型进阶.html">
+            
+                    
+                    18-数据类型进阶
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.6" data-path="20-原型.html">
+            
+                <a href="20-原型.html">
+            
+                    
+                    20-原型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.7" data-path="21-函数进阶.html">
+            
+                <a href="21-函数进阶.html">
+            
+                    
+                    21-函数进阶
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.8" data-path="22-面对对象.html">
+            
+                <a href="22-面对对象.html">
+            
+                    
+                    22-面对对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.9" data-path="23-class基本语法.html">
+            
+                <a href="23-class基本语法.html">
+            
+                    
+                    23-class 基本语法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.10" data-path="24-class继承.html">
+            
+                <a href="24-class继承.html">
+            
+                    
+                    24-class 继承
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.11" data-path="25-modules.html">
+            
+                <a href="25-modules.html">
+            
+                    
+                    25-modules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.12" data-path="26-promise.html">
+            
+                <a href="26-promise.html">
+            
+                    
+                    26-promise
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.13" data-path="27-iterator.html">
+            
+                <a href="27-iterator.html">
+            
+                    
+                    27-iterator
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    页面架构
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../页面架构/CSS-Reset.html">
+            
+                <a href="../../页面架构/CSS-Reset.html">
+            
+                    
+                    CSS Reset
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" >
+            
+                <span>
+            
+                    
+                    布局解决方案
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="../../页面架构/布局解决方案/居中布局.html">
+            
+                <a href="../../页面架构/布局解决方案/居中布局.html">
+            
+                    
+                    居中布局
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.2" data-path="../../页面架构/布局解决方案/多列布局.html">
+            
+                <a href="../../页面架构/布局解决方案/多列布局.html">
+            
+                    
+                    多列布局
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.3" data-path="../../页面架构/布局解决方案/模块与组件.html">
+            
+                <a href="../../页面架构/布局解决方案/模块与组件.html">
+            
+                    
+                    模块与组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    移动端开发
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../移动端开发/2-移动端响应式布局.html">
+            
+                <a href="../../移动端开发/2-移动端响应式布局.html">
+            
+                    
+                    2-移动端响应式布局
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../../移动端开发/3-基于APP的移动端页面开发.html">
+            
+                <a href="../../移动端开发/3-基于APP的移动端页面开发.html">
+            
+                    
+                    3-基于 APP 的移动端页面开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../../移动端开发/4-移动端页面样式进阶.html">
+            
+                <a href="../../移动端开发/4-移动端页面样式进阶.html">
+            
+                    
+                    4-移动端页面样式进阶
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../../移动端开发/5-移动端性能优化.html">
+            
+                <a href="../../移动端开发/5-移动端性能优化.html">
+            
+                    
+                    5-移动端性能优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../../移动端开发/6-移动端坑.html">
+            
+                <a href="../../移动端开发/6-移动端坑.html">
+            
+                    
+                    6-移动端坑
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    单页系统
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" >
+            
+                <span>
+            
+                    
+                    性能优化
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1.1" data-path="../../单页系统/性能优化/15-性能优化.html">
+            
+                <a href="../../单页系统/性能优化/15-性能优化.html">
+            
+                    
+                    15-性能优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.2" data-path="../../单页系统/性能优化/16-执行性能.html">
+            
+                <a href="../../单页系统/性能优化/16-执行性能.html">
+            
+                    
+                    16-执行性能
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >17-StructuredData</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="structureddata">StructuredData</h1>
+<h3 id="js-&#x64CD;&#x4F5C;&#x4E8C;&#x8FDB;&#x5236;&#x6570;&#x636E;">JS &#x64CD;&#x4F5C;&#x4E8C;&#x8FDB;&#x5236;&#x6570;&#x636E;</h3>
+<p>&#x4E8C;&#x8FDB;&#x5236;&#x6570;&#x636E; &#x53EF;&#x4EE5;&#x63D0;&#x9AD8;&#x56FE;&#x5F62;&#x56FE;&#x50CF;&#x7684;&#x6E32;&#x67D3;&#x6027;&#x80FD;; &#x53EF;&#x7528;&#x4E8E; &#x865A;&#x62DF;&#x73B0;&#x5B9E;, 3D &#x6E32;&#x67D3;;</p>
+<p>JS &#x8C03;&#x7528; WebGL &#x7684; API; &#x4E0E; GPU &#x8FDB;&#x884C;&#x6570;&#x636E;&#x4EA4;&#x4E92;, &#x6700;&#x7EC8;&#x6E32;&#x67D3;&#x5230;&#x6D4F;&#x89C8;&#x5668;;</p>
+<p>GPU &#x662F;&#x4F7F;&#x7528; &#x4E8C;&#x8FDB;&#x5236;&#x6570;&#x636E;; &#x800C; JS &#x662F;&#x4F7F;&#x7528; 32 &#x4F4D;&#x7684;&#x6587;&#x672C;&#x7C7B;&#x578B;&#x683C;&#x5F0F;&#x7684;&#x6574;&#x6570;; &#x54EA;&#x6015;&#x5728;&#x6E32;&#x67D3;&#x5DE5;&#x7A0B;&#x4E2D;&#x9700;&#x8981;&#x4E00;&#x6B21;&#x6570;&#x636E;&#x683C;&#x5F0F;&#x7684;&#x8F6C;&#x6362;;
+&#x8FD9;&#x4E2A;&#x8F6C;&#x6362;&#x662F;&#x975E;&#x5E38;&#x8017;&#x65F6;&#x7684;; &#x90A3;&#x4E48;&#x6211;&#x4EEC;&#x4FBF;&#x9700;&#x8981;&#x4E00;&#x79CD;&#x673A;&#x5236;&#x50CF; C &#x8BED;&#x8A00;&#x90A3;&#x6837;, &#x76F4;&#x63A5;&#x64CD;&#x4F5C;&#x5B57;&#x8282;; &#x5C06; 4 &#x4E2A;&#x5B57;&#x8282;&#x7684; 32 &#x4F4D;&#x6574;&#x6570;, &#x4EE5;&#x4E8C;&#x8FDB;&#x5236;&#x7684;&#x5F62;&#x5F0F;&#x539F;&#x5C01;&#x4E0D;&#x52A8;&#x7684;&#x4F20;&#x7ED9; &#x663E;&#x5361;;
+&#x5B83;&#x5141;&#x8BB8;&#x5F00;&#x53D1;&#x8005;&#x60F3; C &#x8BED;&#x8A00;&#x90A3;&#x6837;, &#x4EE5;&#x6570;&#x7EC4;&#x4E0B;&#x6807;&#x7684;&#x5F62;&#x5F0F;, &#x76F4;&#x63A5;&#x64CD;&#x4F5C;&#x5185;&#x5B58;;&#x5927;&#x5927;&#x589E;&#x52A0;&#x4E86; JS &#x5904;&#x7406;&#x4E8C;&#x8FDB;&#x5236;&#x6570;&#x636E;&#x7684;&#x80FD;&#x529B;;</p>
+<h4 id="&#x4E8C;&#x7EA7;&#x5236;&#x64CD;&#x4F5C;&#x63A5;&#x53E3;">&#x4E8C;&#x7EA7;&#x5236;&#x64CD;&#x4F5C;&#x63A5;&#x53E3;</h4>
+<ol>
+<li>ArrayBuffer</li>
+</ol>
+<pre><code>ArrayBuffer &#x5BF9;&#x8C61;&#x7528;&#x6765;&#x8868;&#x793A;&#x901A;&#x7528;&#x7684;&#x3001;&#x56FA;&#x5B9A;&#x957F;&#x5EA6;&#x7684;&#x539F;&#x59CB;&#x4E8C;&#x8FDB;&#x5236;&#x6570;&#x636E;&#x7F13;&#x51B2;&#x533A;&#x3002;
+ArrayBuffer &#x4E0D;&#x80FD;&#x76F4;&#x63A5;&#x64CD;&#x4F5C;&#xFF0C;&#x800C;&#x662F;&#x8981;&#x901A;&#x8FC7;&#x7C7B;&#x578B;&#x6570;&#x7EC4;&#x5BF9;&#x8C61;&#x6216; DataView &#x5BF9;&#x8C61;&#x6765;&#x64CD;&#x4F5C;
+
+* &#x8BED;&#x6CD5;
+
+  new ArrayBuffer(length)
+
+  length
+  &#x8981;&#x521B;&#x5EFA;&#x7684; ArrayBuffer &#x7684;&#x5927;&#x5C0F;&#xFF0C;&#x5355;&#x4F4D;&#x4E3A;&#x5B57;&#x8282;&#x3002;
+
+  &#x5982;&#x679C; length &#x5927;&#x4E8E; Number.MAX_SAFE_INTEGER&#xFF08;&gt;= 2 \*\* 53&#xFF09;&#x6216;&#x4E3A;&#x8D1F;&#x6570;&#xFF0C;&#x5219;&#x629B;&#x51FA;&#x4E00;&#x4E2A; RangeError &#x5F02;&#x5E38;&#x3002;
+
+* &#x5C5E;&#x6027;&#x548C;&#x65B9;&#x6CD5;
+
+- ArrayBuffer.isView(arg)
+
+  &#x5982;&#x679C;&#x53C2;&#x6570;&#x662F; ArrayBuffer &#x7684;&#x89C6;&#x56FE;&#x5B9E;&#x4F8B;&#x5219;&#x8FD4;&#x56DE; true&#xFF0C;&#x4F8B;&#x5982; &#x7C7B;&#x578B;&#x6570;&#x7EC4;&#x5BF9;&#x8C61; &#x6216; DataView &#x5BF9;&#x8C61;&#xFF1B;&#x5426;&#x5219;&#x8FD4;&#x56DE; false&#x3002;
+
+
+```js
+const buffer = new ArrayBuffer(8);
+ArrayBuffer.isView(buffer); // false &#x4E0D;&#x662F;&#x5B83;&#x7684;&#x89C6;&#x56FE;
+
+const view = new Int32Array(buffer); // TypedArray
+ArrayBuffer.isView(view); // true &#x662F;&#x5B83;&#x7684;&#x89C6;&#x56FE;
+```
+
+* ArrayBuffer.prototype.byteLength
+  &#x53EA;&#x8BFB;&#x6570;&#x7EC4;&#x7684;&#x5B57;&#x8282;&#x5927;&#x5C0F;&#x3002;&#x5728;&#x6570;&#x7EC4;&#x521B;&#x5EFA;&#x65F6;&#x786E;&#x5B9A;&#xFF0C;&#x5E76;&#x4E14;&#x4E0D;&#x53EF;&#x53D8;&#x66F4;&#x3002;**&#x53EA;&#x8BFB;**&#x3002;
+
+- ArrayBuffer.prototype.slice()
+  &#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x65B0;&#x7684; ArrayBuffer &#xFF0C;&#x5B83;&#x7684;&#x5185;&#x5BB9;&#x662F;&#x8FD9;&#x4E2A; ArrayBuffer &#x7684;&#x5B57;&#x8282;&#x526F;&#x672C;&#xFF0C;&#x4ECE; begin&#xFF08;&#x5305;&#x62EC;&#xFF09;&#xFF0C;&#x5230; end&#xFF08;&#x4E0D;&#x5305;&#x62EC;&#xFF09;&#x3002;&#x5982;&#x679C; begin &#x6216; end &#x662F;&#x8D1F;&#x6570;&#xFF0C;&#x5219;&#x6307;&#x7684;&#x662F;&#x4ECE;&#x6570;&#x7EC4;&#x672B;&#x5C3E;&#x5F00;&#x59CB;&#x7684;&#x7D22;&#x5F15;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x4ECE;&#x5934;&#x5F00;&#x59CB;&#x3002;
+</code></pre><ol>
+<li>DataView</li>
+</ol>
+<pre><code>ArrayBuffer &#x6709;&#x4E24;&#x79CD;&#x89C6;&#x56FE;; DataView &#x662F;&#x5176;&#x4E2D;&#x4E4B;&#x4E00;;
+
+DataView &#x89C6;&#x56FE;&#x662F;&#x4E00;&#x4E2A;&#x53EF;&#x4EE5;&#x4ECE; ArrayBuffer &#x5BF9;&#x8C61;&#x4E2D;&#x8BFB;&#x5199;&#x591A;&#x79CD;&#x6570;&#x503C;&#x7C7B;&#x578B;&#x7684;&#x5E95;&#x5C42;&#x63A5;&#x53E3;&#xFF0C;&#x5728;&#x8BFB;&#x5199;&#x65F6;&#x4E0D;&#x7528;&#x8003;&#x8651;&#x5E73;&#x53F0;&#x5B57;&#x8282;&#x5E8F;&#x95EE;&#x9898;&#x3002;
+
+* &#x8BED;&#x6CD5;
+
+  new DataView(buffer [, byteOffset [, byteLength]])
+
+  * buffer
+    &#x4E00;&#x4E2A; ArrayBuffer &#x6216; SharedArrayBuffer &#x5BF9;&#x8C61;&#xFF0C;DataView &#x5BF9;&#x8C61;&#x7684;&#x6570;&#x636E;&#x6E90;&#x3002;
+
+  * byteOffset &#x53EF;&#x9009;
+
+  &#x6B64; DataView &#x5BF9;&#x8C61;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x5B57;&#x8282;&#x5728; buffer &#x4E2D;&#x7684;&#x504F;&#x79FB;&#x3002;&#x5982;&#x679C;&#x4E0D;&#x6307;&#x5B9A;&#x5219;&#x9ED8;&#x8BA4;&#x4ECE;&#x7B2C;&#x4E00;&#x4E2A;&#x5B57;&#x8282;&#x5F00;&#x59CB;&#x3002;
+
+  * byteLength &#x53EF;&#x9009;&#x6B64; DataView &#x5BF9;&#x8C61;&#x7684;&#x5B57;&#x8282;&#x957F;&#x5EA6;&#x3002;&#x5982;&#x679C;&#x4E0D;&#x6307;&#x5B9A;&#x5219;&#x9ED8;&#x8BA4;&#x4E0E; buffer &#x7684;&#x957F;&#x5EA6;&#x76F8;&#x540C;&#x3002;
+
+  ```js
+  const buffer = new ArrayBuffer(24);
+  const dv = new DataView(buffer);
+
+  dv.constructor;  // DataView
+  dv.buffer; // ArrayBuffer(24);
+  dv.byteLength; // 24
+  dv.byteOffset; // 0
+  ```
+
+* &#x8BFB; DataView
+
+  * DataView.prototype.getInt8(byteOffset[, littleEndian])
+
+      8-bit &#x6570;(&#x4E00;&#x4E2A;&#x5B57;&#x8282;)
+      &#x4ECE; DataView &#x8D77;&#x59CB;&#x4F4D;&#x7F6E;&#x4EE5; byte &#x4E3A;&#x8BA1;&#x6570;&#x7684;&#x6307;&#x5B9A;&#x504F;&#x79FB;&#x91CF;(byteOffset)&#x5904;&#x83B7;&#x53D6;&#x4E00;&#x4E2A; 8-bit &#x6570;(&#x4E00;&#x4E2A;&#x5B57;&#x8282;).
+
+      littleEndian: true &#x5C0F;&#x7AEF;&#x5B57;&#x8282;&#x5E8F;&#x8BFB;&#x53D6;; false &#x6216;&#x8005;&#x4E0D;&#x4F20;&#x65F6;&#x4ECE;&#x5927;&#x7AEF;&#x5B57;&#x8282;&#x5E8F;&#x8BFB;&#x53D6;;
+
+  * DataView.prototype.getUint8()
+
+    8-bit &#x6570;(&#x65E0;&#x7B26;&#x53F7;&#x5B57;&#x8282;)
+
+  * DataView.prototype.getInt16()
+
+    16-bit &#x6570;(&#x77ED;&#x6574;&#x578B;)
+
+  * DataView.prototype.getUint16()
+
+    16-bit &#x6570;(&#x65E0;&#x7B26;&#x53F7;&#x77ED;&#x6574;&#x578B;).
+
+  * DataView.prototype.getInt32()
+
+    32-bit &#x6570;(&#x957F;&#x6574;&#x578B;).
+
+  * DataView.prototype.getUint32()
+
+    32-bit &#x6570;(&#x65E0;&#x7B26;&#x53F7;&#x957F;&#x6574;&#x578B;).
+
+  * DataView.prototype.getFloat32()
+
+    32-bit &#x6570;(&#x6D6E;&#x70B9;&#x578B;).
+
+  * DataView.prototype.getFloat64()
+
+    64-bit &#x6570;(&#x53CC;&#x7CBE;&#x5EA6;&#x6D6E;&#x70B9;&#x578B;).
+
+* &#x5199; DataView
+</code></pre><ol>
+<li>TypedArray</li>
+</ol>
+<h3 id="&#x5B57;&#x8282;&#x5E8F;">&#x5B57;&#x8282;&#x5E8F;</h3>
+<ul>
+<li>&#x5927;&#x7AEF;&#x5B57;&#x8282;&#x5E8F;</li>
+</ul>
+<p>&#x5B58;&#x50A8; <code>0x12345678</code> &#x548C; <code>ox11223344</code></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0x12</td>
+<td>0x34</td>
+<td>0x56</td>
+<td>0x78</td>
+<td></td>
+<td>0x11</td>
+<td>0x22</td>
+<td>0x33</td>
+<td>0x44</td>
+</tr>
+</tbody>
+</table>
+<p>----&#x5185;&#x5B58;&#x589E;&#x957F;&#x65B9;&#x5411;----&gt;</p>
+<ul>
+<li>&#x5C0F;&#x7AEF;&#x5B57;&#x8282;&#x5E8F;</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0x78</td>
+<td>0x56</td>
+<td>0x34</td>
+<td>0x12</td>
+<td></td>
+<td>0x44</td>
+<td>0x33</td>
+<td>0x22</td>
+<td>0x11</td>
+</tr>
+</tbody>
+</table>
+<p>----&#x5185;&#x5B58;&#x589E;&#x957F;&#x65B9;&#x5411;----&gt;</p>
+<ul>
+<li>&#x4E3A;&#x4EC0;&#x4E48;&#x4F1A;&#x6709; &#x5927;&#x7AEF;, &#x5C0F;&#x7AEF;&#x7684;&#x533A;&#x522B;&#x5462;?</li>
+</ul>
+<p>&#x8FD9;&#x662F;&#x56E0;&#x4E3A;&#x4E0D;&#x540C;&#x7684;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;, &#x4E0D;&#x540C;&#x7684; CPU; &#x5728;&#x8BBE;&#x8BA1;&#x7684;&#x65F6;&#x5019;&#x6BD4;&#x8F83;&#x4EFB;&#x6027;, &#x6709;&#x4E9B;&#x662F;&#x5927;&#x7AEF;&#x7684;; &#x6709;&#x4E9B;&#x662F;&#x5C0F;&#x7AEF;&#x7684;;</p>
+<p>TCP &#x662F;&#x4E00;&#x4E2A;&#x7F51;&#x7EDC;&#x534F;&#x8BAE;; &#x4F7F;&#x7528;&#x7684;&#x662F;&#x5927;&#x7AEF;&#x7684;&#x534F;&#x8BAE;;</p>
+<ul>
+<li>&#x5224;&#x65AD;&#x5B57;&#x8282;&#x5E8F;</li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> littleEndian = (<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">var</span> buffer = <span class="hljs-keyword">new</span> <span class="hljs-built_in">ArrayBuffer</span>(<span class="hljs-number">2</span>);
+  <span class="hljs-keyword">new</span> <span class="hljs-built_in">DataView</span>(buffer).setInt16(<span class="hljs-number">0</span>, <span class="hljs-number">256</span>, <span class="hljs-literal">true</span> <span class="hljs-comment">/* &#x8BBE;&#x7F6E;&#x503C;&#x65F6;&#x4F7F;&#x7528;&#x5C0F;&#x7AEF;&#x5B57;&#x8282;&#x5E8F; */</span>);
+  <span class="hljs-comment">// Int16Array &#x4F7F;&#x7528;&#x7CFB;&#x7EDF;&#x5B57;&#x8282;&#x5E8F;&#xFF0C;&#x7531;&#x6B64;&#x53EF;&#x4EE5;&#x5224;&#x65AD;&#x7CFB;&#x7EDF;&#x662F;&#x5426;&#x662F;&#x5C0F;&#x7AEF;&#x5B57;&#x8282;&#x5E8F;</span>
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Int16Array</span>(buffer)[<span class="hljs-number">0</span>] === <span class="hljs-number">256</span>;
+})();
+<span class="hljs-built_in">console</span>.log(littleEndian); <span class="hljs-comment">// true or false</span>
+</code></pre>
+<h3 id="arraybuffer-&#x7684;&#x4F7F;&#x7528;-dataview-&#x7684;&#x4F7F;&#x7528;">ArrayBuffer &#x7684;&#x4F7F;&#x7528;, DataView &#x7684;&#x4F7F;&#x7528;</h3>
+<p>&#x5047;&#x8BBE;&#x4E00;&#x4E2A;&#x5355;&#x5143;&#x683C;&#x8868;&#x793A;&#x4E00;&#x4E2A;&#x5B57;&#x8282;;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> buffer = <span class="hljs-keyword">new</span> <span class="hljs-built_in">ArrayBuffer</span>(<span class="hljs-number">16</span>);
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>0x00</th>
+<th>0x01</th>
+<th>0x02</th>
+<th>0x03</th>
+<th>0x04</th>
+<th>0x05</th>
+<th>0x06</th>
+<th>0x07</th>
+<th>0x08</th>
+<th>0x09</th>
+<th>0x0a</th>
+<th>0x0b</th>
+<th>0x0c</th>
+<th>0x0d</th>
+<th>0x0e</th>
+<th>0x0f</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> dv = <span class="hljs-keyword">new</span> DataViwe(buffer, <span class="hljs-number">4</span>, <span class="hljs-number">4</span>);
+<span class="hljs-comment">// &#x504F;&#x79FB;&#x4F4D;&#x7F6E;&#x4E3A; 4;</span>
+<span class="hljs-comment">// &#x957F;&#x5EA6;&#x4E3A; 4;</span>
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>0x00</th>
+<th>0x01</th>
+<th>0x02</th>
+<th>0x03</th>
+<th>0x04</th>
+<th>0x05</th>
+<th>0x06</th>
+<th>0x07</th>
+<th>0x08</th>
+<th>0x09</th>
+<th>0x0a</th>
+<th>0x0b</th>
+<th>0x0c</th>
+<th>0x0d</th>
+<th>0x0e</th>
+<th>0x0f</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>dv</td>
+<td>dv</td>
+<td>dv</td>
+<td>dv</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-js">dv.setInt16(<span class="hljs-number">1</span>, <span class="hljs-string">&apos;0x002a&apos;</span>);
+<span class="hljs-comment">// setInt16 &#x4F1A;&#x5199;&#x5165;&#x4E24;&#x4E2A;&#x5B57;&#x8282;</span>
+<span class="hljs-comment">// 1 &#x4EE3;&#x8868;&#x4E00;&#x4E2A;&#x504F;&#x79FB;&#x91CF;</span>
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>0x00</th>
+<th>0x01</th>
+<th>0x02</th>
+<th>0x03</th>
+<th>0x04</th>
+<th>0x05</th>
+<th>0x06</th>
+<th>0x07</th>
+<th>0x08</th>
+<th>0x09</th>
+<th>0x0a</th>
+<th>0x0b</th>
+<th>0x0c</th>
+<th>0x0d</th>
+<th>0x0e</th>
+<th>0x0f</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>00</td>
+<td>2a</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>&#x6570;&#x636E;&#x7C7B;&#x578B;</th>
+<th>&#x64CD;&#x4F5C;&#x7684;&#x5B57;&#x8282;&#x6570; (&#x5047;&#x8BBE;&#x4E00;&#x4E2A;&#x5355;&#x5143;&#x683C;&#x8868;&#x793A;&#x4E00;&#x4E2A;&#x5B57;&#x8282;)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>int8, Uint8</td>
+<td>1 &#x4E2A;&#x5B57;&#x8282;</td>
+</tr>
+<tr>
+<td>int16, Uint16</td>
+<td>2 &#x4E2A;&#x5B57;&#x8282;</td>
+</tr>
+<tr>
+<td>int32, Uint32, Float32</td>
+<td>4 &#x4E2A;&#x5B57;&#x8282;</td>
+</tr>
+<tr>
+<td>Float64</td>
+<td>8 &#x4E2A;&#x5B57;&#x8282;</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-js"><span class="hljs-comment">// &#x8303;&#x56F4;&#x662F; 0x05;</span>
+dv.getInt8(<span class="hljs-number">1</span>); <span class="hljs-comment">// 0x00 =&gt; 0;</span>
+<span class="hljs-comment">// &#x8303;&#x56F4;&#x662F; 0x06;</span>
+dv.getInt8(<span class="hljs-number">12</span>); <span class="hljs-comment">// 0x2a =&gt; 42;</span>
+
+<span class="hljs-comment">// &#x8303;&#x56F4;&#x662F; 0x05 ~ 0x06;</span>
+dv.getInt16(<span class="hljs-number">1</span>); <span class="hljs-comment">// 0x002a =&gt; 42;</span>
+<span class="hljs-comment">// &#x8303;&#x56F4;&#x662F; 0x06 ~ 0x07;</span>
+dv.getInt16(<span class="hljs-number">2</span>); <span class="hljs-comment">// 0x2a00 =&gt; 10752;</span>
+
+<span class="hljs-comment">// &#x8303;&#x56F4;&#x662F; 0x04 ~ 0x07;</span>
+dv.getInt32(<span class="hljs-number">0</span>); <span class="hljs-comment">// 0x00002a00 =&gt; 10752;</span>
+
+<span class="hljs-comment">// &#x4F7F;&#x7528;&#x5C0F;&#x7AEF;&#x5B57;&#x8282;&#x5E8F;; &#x4ECE;&#x53F3;&#x5F80;&#x5DE6;&#x53D6;; &#x8303;&#x56F4;&#x662F; 0x07 ~ 0x04;</span>
+dv.getInt32(<span class="hljs-number">0</span>, !<span class="hljs-number">0</span>); <span class="hljs-comment">// 0x002a0000 =&gt; 2752512;</span>
+
+<span class="hljs-comment">/**
+ * dv &#x8FD9;&#x4E2A;&#x89C6;&#x56FE;&#x7684;&#x8303;&#x56F4;&#x53EA;&#x6709; 4&#x4E2A;&#x5B57;&#x8282;; &#x8303;&#x56F4;&#x662F; 0x04 ~ 0x07
+ * getInt32 &#x64CD;&#x4F5C;&#x7684;&#x4E5F;&#x662F; 4&#x4E2A;&#x5B57;&#x8282;; &#x4F46;&#x6709; 1 &#x4E2A;&#x504F;&#x79FB;&#x91CF;; &#x83B7;&#x53D6;&#x7684;&#x8303;&#x56F4;&#x662F; 0x05 ~ 0x08;
+ * &#x663E;&#x800C;&#x6613;&#x89C1;&#x7684; &#x8D8A;&#x754C;&#x4E86;;
+ * &#x5C06;&#x4F1A;&#x62A5; RangeError
+ */</span>
+dv.getInt32(<span class="hljs-number">1</span>); <span class="hljs-comment">// RangeError</span>
+
+<span class="hljs-comment">/**
+ * dv &#x8FD9;&#x4E2A;&#x89C6;&#x56FE;&#x7684;&#x8303;&#x56F4;&#x53EA;&#x6709; 4&#x4E2A;&#x5B57;&#x8282;; &#x8303;&#x56F4;&#x662F; 0x04 ~ 0x07
+ * getFloat64 &#x64CD;&#x4F5C;&#x7684;&#x662F; 8&#x4E2A;&#x5B57;&#x8282;; &#x83B7;&#x53D6;&#x7684;&#x8303;&#x56F4;&#x662F; 0x04 ~ 0x0b;
+ * &#x663E;&#x800C;&#x6613;&#x89C1;&#x7684; &#x8D8A;&#x754C;&#x4E86;;
+ * &#x5C06;&#x4F1A;&#x62A5; RangeError
+ */</span>
+dv.getFloat64(<span class="hljs-number">0</span>); <span class="hljs-comment">// RangeError</span>
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="16-KeyedCollection.html" class="navigation navigation-prev " aria-label="Previous page: 16-KeyedCollection">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="18-数据类型进阶.html" class="navigation navigation-next " aria-label="Next page: 18-数据类型进阶">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"17-StructuredData","date":"2018-05-15T20:02:52.000Z","level":"1.2.1.4","depth":3,"next":{"title":"18-数据类型进阶","level":"1.2.1.5","depth":3,"path":"JavaScript程序设计/数据类型/18-数据类型进阶.md","ref":"JavaScript程序设计/数据类型/18-数据类型进阶.md","articles":[]},"previous":{"title":"16-KeyedCollection","level":"1.2.1.3","depth":3,"path":"JavaScript程序设计/数据类型/16-KeyedCollection.md","ref":"JavaScript程序设计/数据类型/16-KeyedCollection.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","editlink","sharing","expandable-chapters"],"root":"./docs","styles":{"website":"styles/website.css"},"pluginsConfig":{"github":{"url":"https://github.com/yingyuk/frontend-tutoriall"},"editlink":{"label":"编辑本页","multilingual":false,"base":"https://github.com/yingyuk/frontend-tutoriall/edit/master/docs/"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":false,"google":false,"instapaper":false,"twitter":false,"vk":false,"weibo":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Bash Tutorial","language":"zh-hans","links":{"sidebar":{"Yingyu Blog":"https://yingyuk.github.io/tags/"}},"gitbook":"*"},"file":{"path":"JavaScript程序设计/数据类型/17-StructuredData.md","mtime":"2018-06-03T14:43:09.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-03T15:33:10.653Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-editlink/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

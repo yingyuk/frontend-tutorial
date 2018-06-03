@@ -1,0 +1,883 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>23-class 基本语法 · Bash Tutorial</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../styles/website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="24-class继承.html" />
+    
+    
+    <link rel="prev" href="22-面对对象.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://yingyuk.github.io/tags/" target="_blank" class="custom-link">Yingyu Blog</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    JavaScript 程序设计
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" >
+            
+                <span>
+            
+                    
+                    数据类型
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" data-path="14-Error.html">
+            
+                <a href="14-Error.html">
+            
+                    
+                    14-Error
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2" data-path="15-TypedArray.html">
+            
+                <a href="15-TypedArray.html">
+            
+                    
+                    15-TypedArray
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.3" data-path="16-KeyedCollection.html">
+            
+                <a href="16-KeyedCollection.html">
+            
+                    
+                    16-KeyedCollection
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.4" data-path="17-StructuredData.html">
+            
+                <a href="17-StructuredData.html">
+            
+                    
+                    17-StructuredData
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.5" data-path="18-数据类型进阶.html">
+            
+                <a href="18-数据类型进阶.html">
+            
+                    
+                    18-数据类型进阶
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.6" data-path="20-原型.html">
+            
+                <a href="20-原型.html">
+            
+                    
+                    20-原型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.7" data-path="21-函数进阶.html">
+            
+                <a href="21-函数进阶.html">
+            
+                    
+                    21-函数进阶
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.8" data-path="22-面对对象.html">
+            
+                <a href="22-面对对象.html">
+            
+                    
+                    22-面对对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.1.9" data-path="23-class基本语法.html">
+            
+                <a href="23-class基本语法.html">
+            
+                    
+                    23-class 基本语法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.10" data-path="24-class继承.html">
+            
+                <a href="24-class继承.html">
+            
+                    
+                    24-class 继承
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.11" data-path="25-modules.html">
+            
+                <a href="25-modules.html">
+            
+                    
+                    25-modules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.12" data-path="26-promise.html">
+            
+                <a href="26-promise.html">
+            
+                    
+                    26-promise
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.13" data-path="27-iterator.html">
+            
+                <a href="27-iterator.html">
+            
+                    
+                    27-iterator
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    页面架构
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../页面架构/CSS-Reset.html">
+            
+                <a href="../../页面架构/CSS-Reset.html">
+            
+                    
+                    CSS Reset
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" >
+            
+                <span>
+            
+                    
+                    布局解决方案
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="../../页面架构/布局解决方案/居中布局.html">
+            
+                <a href="../../页面架构/布局解决方案/居中布局.html">
+            
+                    
+                    居中布局
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.2" data-path="../../页面架构/布局解决方案/多列布局.html">
+            
+                <a href="../../页面架构/布局解决方案/多列布局.html">
+            
+                    
+                    多列布局
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.3" data-path="../../页面架构/布局解决方案/模块与组件.html">
+            
+                <a href="../../页面架构/布局解决方案/模块与组件.html">
+            
+                    
+                    模块与组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    移动端开发
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../移动端开发/2-移动端响应式布局.html">
+            
+                <a href="../../移动端开发/2-移动端响应式布局.html">
+            
+                    
+                    2-移动端响应式布局
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../../移动端开发/3-基于APP的移动端页面开发.html">
+            
+                <a href="../../移动端开发/3-基于APP的移动端页面开发.html">
+            
+                    
+                    3-基于 APP 的移动端页面开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../../移动端开发/4-移动端页面样式进阶.html">
+            
+                <a href="../../移动端开发/4-移动端页面样式进阶.html">
+            
+                    
+                    4-移动端页面样式进阶
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../../移动端开发/5-移动端性能优化.html">
+            
+                <a href="../../移动端开发/5-移动端性能优化.html">
+            
+                    
+                    5-移动端性能优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../../移动端开发/6-移动端坑.html">
+            
+                <a href="../../移动端开发/6-移动端坑.html">
+            
+                    
+                    6-移动端坑
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    单页系统
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" >
+            
+                <span>
+            
+                    
+                    性能优化
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1.1" data-path="../../单页系统/性能优化/15-性能优化.html">
+            
+                <a href="../../单页系统/性能优化/15-性能优化.html">
+            
+                    
+                    15-性能优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.2" data-path="../../单页系统/性能优化/16-执行性能.html">
+            
+                <a href="../../单页系统/性能优化/16-执行性能.html">
+            
+                    
+                    16-执行性能
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >23-class 基本语法</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h3 id="class-&#x7B80;&#x4ECB;">class &#x7B80;&#x4ECB;</h3>
+<p>&#x65E9;&#x671F;&#x7684;&#x5B9A;&#x4E49;</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">ES5</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">this</span>.a = a;
+  <span class="hljs-keyword">this</span>.b = b;
+}
+ES5.prototype.func = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.a + <span class="hljs-keyword">this</span>.b;
+};
+
+<span class="hljs-keyword">var</span> result = <span class="hljs-keyword">new</span> ES5(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>);
+</code></pre>
+<pre><code class="lang-js"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ES6</span> </span>{
+  <span class="hljs-keyword">constructor</span>(a, b) {
+    <span class="hljs-keyword">this</span>.a = a;
+    <span class="hljs-keyword">this</span>.b = b;
+  }
+  func() {
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.a + <span class="hljs-keyword">this</span>.b;
+  }
+}
+<span class="hljs-keyword">var</span> result = <span class="hljs-keyword">new</span> ES6(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>);
+</code></pre>
+<p>&#x8BED;&#x6CD5;&#x7CD6;</p>
+<h3 id="class-&#x7279;&#x6027;">class &#x7279;&#x6027;</h3>
+<ol>
+<li>&#x5171;&#x6027;</li>
+</ol>
+<p>&#x5B9E;&#x4F8B;&#x5316;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> a = <span class="hljs-keyword">new</span> ES5();
+<span class="hljs-keyword">var</span> b = <span class="hljs-keyword">new</span> ES6();
+
+<span class="hljs-keyword">var</span> c = ES5();
+<span class="hljs-keyword">var</span> d = ES6(); <span class="hljs-comment">// throw error</span>
+</code></pre>
+<p>&#x540C;&#x4E8E; &#x6784;&#x9020;&#x51FD;&#x6570;</p>
+<pre><code class="lang-js"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ES6</span> </span>{
+  <span class="hljs-keyword">constructor</span>() {
+    <span class="hljs-keyword">this</span>.foo = <span class="hljs-string">&apos;bar&apos;</span>;
+  }
+  func() {
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.a + <span class="hljs-keyword">this</span>.b;
+  }
+}
+
+<span class="hljs-keyword">typeof</span> ES6; <span class="hljs-comment">// &apos;function&apos;</span>
+ES6 === ES6.prototype.constructor; <span class="hljs-comment">// true</span>
+
+<span class="hljs-keyword">var</span> b = <span class="hljs-keyword">new</span> ES6();
+b.constructor === ES6.prototype.constructor; <span class="hljs-comment">// true</span>
+</code></pre>
+<p>&#x7ED9;&#x7C7B;&#x8D4B;&#x4E88;&#x66F4;&#x591A;&#x65B9;&#x6CD5;</p>
+<pre><code class="lang-js"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ES6</span> </span>{}
+
+<span class="hljs-comment">// &#x7ED9;&#x7C7B;&#x8D4B;&#x4E88;&#x66F4;&#x591A;&#x65B9;&#x6CD5;</span>
+<span class="hljs-built_in">Object</span>.assign(ES6, {
+  newFunc() {},
+  newFunc2() {},
+});
+</code></pre>
+<ol>
+<li>&#x5DEE;&#x5F02;</li>
+</ol>
+<pre><code class="lang-js"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ES6</span> </span>{
+  <span class="hljs-keyword">constructor</span>() {}
+  newFunc() {},
+  newFunc2() {},
+}
+
+<span class="hljs-built_in">Object</span>.keys(ES6.prototype); <span class="hljs-comment">// []</span>
+
+<span class="hljs-built_in">Object</span>.getOwnPropertyNames(ES6.prototype); <span class="hljs-comment">// [ &apos;constructor&apos;, &apos;newFunc&apos;, &apos;newFunc2&apos;]</span>
+</code></pre>
+<p>&#x53EF;&#x679A;&#x4E3E;</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">ES5</span>(<span class="hljs-params"></span>) </span>{}
+
+<span class="hljs-built_in">Object</span>.assign(ES5, {
+  newFunc() {},
+  newFunc2() {},
+});
+<span class="hljs-built_in">Object</span>.keys(ES5.prototype); <span class="hljs-comment">// [ &apos;newFunc&apos;, &apos;newFunc2&apos;]</span>
+
+<span class="hljs-built_in">Object</span>.getOwnPropertyNames(ES5.prototype); <span class="hljs-comment">// [ &apos;constructor&apos;, &apos;newFunc&apos;, &apos;newFunc2&apos;]</span>
+</code></pre>
+<p>&#x9ED8;&#x8BA4;&#x4F7F;&#x7528;&#x4E25;&#x683C;&#x6A21;&#x5F0F;;</p>
+<h3 id="class-&#x8868;&#x8FBE;&#x5F0F;">class &#x8868;&#x8FBE;&#x5F0F;</h3>
+<p>class &#x5185;&#x90E8;&#x5B9A;&#x4E49;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> ES6 = <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">inside</span> </span>{
+  getName() {
+    <span class="hljs-comment">// inside &#x53EA;&#x80FD;&#x5728;&#x5185;&#x90E8;&#x88AB;&#x5F15;&#x7528;</span>
+    <span class="hljs-built_in">console</span>.log(inside.name);
+  }
+};
+<span class="hljs-keyword">let</span> _es6 = <span class="hljs-keyword">new</span> ES6();
+
+_es6.getName(); <span class="hljs-comment">// inside</span>
+
+inside.name; <span class="hljs-comment">// ReferenceError: inside is not defined</span>
+</code></pre>
+<p>class &#x4E0D;&#x53EF;&#x4EE5;&#x91CD;&#x590D;&#x58F0;&#x660E;; &#x4F1A;&#x62A5;&#x9519;</p>
+<p>class &#x53D8;&#x91CF;&#x63D0;&#x5347;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">new</span> ES5();
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">ES5</span>(<span class="hljs-params"></span>) </span>{}
+
+<span class="hljs-keyword">new</span> ES6(); <span class="hljs-comment">// ReferenceError: ES6 is not defined</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ES6</span> </span>{}
+</code></pre>
+<h3 id="class-static">class static</h3>
+<ol>
+<li>&#x5B9E;&#x4F8B;&#x65E0;&#x6CD5;&#x8C03;&#x7528; static &#x65B9;&#x6CD5;</li>
+</ol>
+<p>&#x9759;&#x6001;&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x4FDD;&#x62A4;&#x67D0;&#x4E9B;&#x65B9;&#x6CD5;&#x4E0D;&#x80CC;&#x5B9E;&#x4F8B;&#x4F7F;&#x7528;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> ES6 = <span class="hljs-class"><span class="hljs-keyword">class</span> </span>{
+  <span class="hljs-keyword">constructor</span>() {}
+  <span class="hljs-keyword">static</span> getName() {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">this</span>.name);
+  }
+};
+ES6.getName;
+
+<span class="hljs-keyword">const</span> _es6 = <span class="hljs-keyword">new</span> ES6();
+_es6.getName; <span class="hljs-comment">// undefined</span>
+</code></pre>
+<ol>
+<li>static &#x5185;&#x7684; this &#x662F;&#x6307;&#x5411;&#x7C7B;&#x7684;;</li>
+</ol>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> ES6 = <span class="hljs-class"><span class="hljs-keyword">class</span> </span>{
+  <span class="hljs-keyword">constructor</span>() {}
+  <span class="hljs-keyword">static</span> name(){
+    <span class="hljs-keyword">this</span>.getName();
+  }
+  <span class="hljs-keyword">static</span> getName() {
+    <span class="hljs-comment">// &#x88AB;&#x8C03;&#x7528;</span>
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;name&apos;</span>);
+  },
+  getName(){
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;new name&apos;</span>)
+  }
+};
+ES6.name(); <span class="hljs-comment">// &apos;name&apos;</span>
+</code></pre>
+<ol>
+<li>&#x7EE7;&#x627F;&#x5305;&#x542B; static</li>
+</ol>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> ES6 = <span class="hljs-class"><span class="hljs-keyword">class</span> </span>{
+  <span class="hljs-keyword">constructor</span>() {}
+  <span class="hljs-keyword">static</span> getName() {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;name&apos;</span>);
+  },
+  getNewName(){
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;new name&apos;</span>)
+  }
+};
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ES6_child</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">ES6</span></span>{
+  <span class="hljs-keyword">static</span> getName(){
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">super</span>.getName() + <span class="hljs-string">&apos; child&apos;</span>)
+  }
+}
+ES6_child.getNewName(); <span class="hljs-comment">// &apos;new name&apos; // &#x987A;&#x7740;&#x539F;&#x578B;&#x94FE;&#x67E5;&#x627E;</span>
+ES6_child.getName(); <span class="hljs-comment">// &apos;name child&apos;</span>
+</code></pre>
+<p>static &#x53EA;&#x6709;&#x9759;&#x6001;&#x65B9;&#x6CD5;; &#x6CA1;&#x6709;&#x9759;&#x6001;&#x5C5E;&#x6027;;</p>
+<p>&#x5728; class &#x4E2D;&#x7684;&#x540C;&#x540D;&#x65B9;&#x6CD5;; static func &#x4F18;&#x5148; func &#x8C03;&#x7528;;</p>
+<p>&#x5B9E;&#x4F8B;&#x65E0;&#x6CD5;&#x8C03;&#x7528; static func;</p>
+<h3 id="newtarget">new.target</h3>
+<p>ES5 &#x4E2D;&#x7684; new.target</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">ES5</span>(<span class="hljs-params"></span>)</span>{
+  <span class="hljs-keyword">if</span>(!<span class="hljs-keyword">new</span>.target){
+    <span class="hljs-keyword">throw</span> nwe <span class="hljs-built_in">Error</span>(<span class="hljs-string">&apos;must be new ES5&apos;</span>)
+  }
+}
+ES5(); <span class="hljs-comment">// Error</span>
+</code></pre>
+<p>class &#x4E2D;&#x7684; new.target;</p>
+<p>class &#x4E2D;&#x7684; new.target &#x6307;&#x5411;&#x7684;&#x662F;&#x5B50;&#x7C7B;;</p>
+<pre><code class="lang-js"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Polygon</span> </span>{
+  <span class="hljs-keyword">constructor</span>() {
+    <span class="hljs-keyword">const</span> result = <span class="hljs-keyword">new</span>.target === Polygon ? <span class="hljs-string">&apos;success&apos;</span> : <span class="hljs-string">&apos;fail&apos;</span>;
+    <span class="hljs-built_in">console</span>.log(result);
+  }
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Square</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Polygon</span> </span>{
+  <span class="hljs-keyword">constructor</span>() {
+    <span class="hljs-keyword">super</span>();
+  }
+}
+
+<span class="hljs-keyword">let</span> polygon = <span class="hljs-keyword">new</span> Polygon(); <span class="hljs-comment">// &apos;success&apos;</span>
+<span class="hljs-keyword">let</span> square = <span class="hljs-keyword">new</span> Square(); <span class="hljs-comment">// &apos;fail&apos;</span>
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="22-面对对象.html" class="navigation navigation-prev " aria-label="Previous page: 22-面对对象">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="24-class继承.html" class="navigation navigation-next " aria-label="Next page: 24-class 继承">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"23-class 基本语法","date":"2018-05-22T19:52:43.000Z","level":"1.2.1.9","depth":3,"next":{"title":"24-class 继承","level":"1.2.1.10","depth":3,"path":"JavaScript程序设计/数据类型/24-class继承.md","ref":"JavaScript程序设计/数据类型/24-class继承.md","articles":[]},"previous":{"title":"22-面对对象","level":"1.2.1.8","depth":3,"path":"JavaScript程序设计/数据类型/22-面对对象.md","ref":"JavaScript程序设计/数据类型/22-面对对象.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","editlink","sharing","expandable-chapters"],"root":"./docs","styles":{"website":"styles/website.css"},"pluginsConfig":{"github":{"url":"https://github.com/yingyuk/frontend-tutoriall"},"editlink":{"label":"编辑本页","multilingual":false,"base":"https://github.com/yingyuk/frontend-tutoriall/edit/master/docs/"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":false,"google":false,"instapaper":false,"twitter":false,"vk":false,"weibo":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Bash Tutorial","language":"zh-hans","links":{"sidebar":{"Yingyu Blog":"https://yingyuk.github.io/tags/"}},"gitbook":"*"},"file":{"path":"JavaScript程序设计/数据类型/23-class基本语法.md","mtime":"2018-06-03T14:43:09.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-03T15:33:10.653Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-editlink/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

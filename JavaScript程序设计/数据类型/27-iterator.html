@@ -1,0 +1,790 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>27-iterator · Bash Tutorial</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../styles/website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="26-promise.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://yingyuk.github.io/tags/" target="_blank" class="custom-link">Yingyu Blog</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    JavaScript 程序设计
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" >
+            
+                <span>
+            
+                    
+                    数据类型
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" data-path="14-Error.html">
+            
+                <a href="14-Error.html">
+            
+                    
+                    14-Error
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2" data-path="15-TypedArray.html">
+            
+                <a href="15-TypedArray.html">
+            
+                    
+                    15-TypedArray
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.3" data-path="16-KeyedCollection.html">
+            
+                <a href="16-KeyedCollection.html">
+            
+                    
+                    16-KeyedCollection
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.4" data-path="17-StructuredData.html">
+            
+                <a href="17-StructuredData.html">
+            
+                    
+                    17-StructuredData
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.5" data-path="18-数据类型进阶.html">
+            
+                <a href="18-数据类型进阶.html">
+            
+                    
+                    18-数据类型进阶
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.6" data-path="20-原型.html">
+            
+                <a href="20-原型.html">
+            
+                    
+                    20-原型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.7" data-path="21-函数进阶.html">
+            
+                <a href="21-函数进阶.html">
+            
+                    
+                    21-函数进阶
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.8" data-path="22-面对对象.html">
+            
+                <a href="22-面对对象.html">
+            
+                    
+                    22-面对对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.9" data-path="23-class基本语法.html">
+            
+                <a href="23-class基本语法.html">
+            
+                    
+                    23-class 基本语法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.10" data-path="24-class继承.html">
+            
+                <a href="24-class继承.html">
+            
+                    
+                    24-class 继承
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.11" data-path="25-modules.html">
+            
+                <a href="25-modules.html">
+            
+                    
+                    25-modules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.12" data-path="26-promise.html">
+            
+                <a href="26-promise.html">
+            
+                    
+                    26-promise
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.1.13" data-path="27-iterator.html">
+            
+                <a href="27-iterator.html">
+            
+                    
+                    27-iterator
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    页面架构
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../页面架构/CSS-Reset.html">
+            
+                <a href="../../页面架构/CSS-Reset.html">
+            
+                    
+                    CSS Reset
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" >
+            
+                <span>
+            
+                    
+                    布局解决方案
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="../../页面架构/布局解决方案/居中布局.html">
+            
+                <a href="../../页面架构/布局解决方案/居中布局.html">
+            
+                    
+                    居中布局
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.2" data-path="../../页面架构/布局解决方案/多列布局.html">
+            
+                <a href="../../页面架构/布局解决方案/多列布局.html">
+            
+                    
+                    多列布局
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.3" data-path="../../页面架构/布局解决方案/模块与组件.html">
+            
+                <a href="../../页面架构/布局解决方案/模块与组件.html">
+            
+                    
+                    模块与组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    移动端开发
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../移动端开发/2-移动端响应式布局.html">
+            
+                <a href="../../移动端开发/2-移动端响应式布局.html">
+            
+                    
+                    2-移动端响应式布局
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../../移动端开发/3-基于APP的移动端页面开发.html">
+            
+                <a href="../../移动端开发/3-基于APP的移动端页面开发.html">
+            
+                    
+                    3-基于 APP 的移动端页面开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../../移动端开发/4-移动端页面样式进阶.html">
+            
+                <a href="../../移动端开发/4-移动端页面样式进阶.html">
+            
+                    
+                    4-移动端页面样式进阶
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../../移动端开发/5-移动端性能优化.html">
+            
+                <a href="../../移动端开发/5-移动端性能优化.html">
+            
+                    
+                    5-移动端性能优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../../移动端开发/6-移动端坑.html">
+            
+                <a href="../../移动端开发/6-移动端坑.html">
+            
+                    
+                    6-移动端坑
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    单页系统
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" >
+            
+                <span>
+            
+                    
+                    性能优化
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1.1" data-path="../../单页系统/性能优化/15-性能优化.html">
+            
+                <a href="../../单页系统/性能优化/15-性能优化.html">
+            
+                    
+                    15-性能优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.2" data-path="../../单页系统/性能优化/16-执行性能.html">
+            
+                <a href="../../单页系统/性能优化/16-执行性能.html">
+            
+                    
+                    16-执行性能
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >27-iterator</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h3 id="&#x53EF;&#x8FED;&#x4EE3;&#x534F;&#x8BAE;">&#x53EF;&#x8FED;&#x4EE3;&#x534F;&#x8BAE;</h3>
+<p>&#x4E3A;&#x5404;&#x79CD;&#x5BF9;&#x8C61;&#x63D0;&#x4F9B;&#x4E86;&#x7EDF;&#x4E00;&#x7684;&#x8BBF;&#x95EE;&#x673A;&#x5236;;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> arr = [<span class="hljs-string">&apos;a&apos;</span>, <span class="hljs-string">&apos;b&apos;</span>, <span class="hljs-string">&apos;c&apos;</span>];
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> item <span class="hljs-keyword">of</span> arr) {
+  <span class="hljs-built_in">console</span>.log(item);
+}
+</code></pre>
+<p>&#x7528; for of &#x5FAA;&#x73AF;&#x904D;&#x5386;&#x6570;&#x7EC4;&#x65F6;, &#x5185;&#x90E8;&#x5176;&#x5B9E;&#x8C03;&#x7528;&#x4E86;&#x8BE5;&#x6570;&#x7EC4;&#x7684; Iterator;</p>
+<p>&#x6570;&#x7EC4;&#x7684; Iterator &#x662F;&#x901A;&#x8FC7; Symbol.iterator &#x5C5E;&#x6027;&#x751F;&#x6210;&#x7684;;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> arr = [<span class="hljs-string">&apos;a&apos;</span>, <span class="hljs-string">&apos;b&apos;</span>, <span class="hljs-string">&apos;c&apos;</span>];
+
+<span class="hljs-keyword">const</span> iterator = arr[<span class="hljs-built_in">Symbol</span>.iterator]();
+
+iterator.next(); <span class="hljs-comment">// { value: &apos;a&apos;, done: false}</span>
+iterator.next(); <span class="hljs-comment">// { value: &apos;b&apos;, done: false}</span>
+iterator.next(); <span class="hljs-comment">// { value: &apos;c&apos;, done: false}</span>
+iterator.next(); <span class="hljs-comment">// { value: undefined, done: true}</span>
+</code></pre>
+<p>&#x4EFB;&#x610F;&#x5BF9;&#x8C61;, &#x53EA;&#x8981;&#x5B9E;&#x73B0;&#x4E86;&#x53EF;&#x8FED;&#x4EE3;&#x534F;&#x8BAE;; &#x5B83;&#x7684;&#x5185;&#x90E8;&#x6210;&#x5458;&#x5C31;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x7EDF;&#x4E00;&#x7684;&#x8BED;&#x6CD5;&#x88AB;&#x68C0;&#x7D22;&#x5230;;</p>
+<pre><code class="lang-text">for ... of
+&#x62D3;&#x5C55;&#x8FD0;&#x7B97;&#x7B26;
+&#x89E3;&#x6784;&#x8D4B;&#x503C;
+&#x6570;&#x7EC4;
+&#x5B57;&#x7B26;&#x4E32;
+Map
+
+&#x7B49;&#x7B49;
+</code></pre>
+<pre><code class="lang-ts"><span class="hljs-keyword">interface</span> Iterable {
+  [Symbol.iterator](): Iterator;
+}
+</code></pre>
+<h3 id="iterator-&#x63A5;&#x53E3;">Iterator &#x63A5;&#x53E3;</h3>
+<pre><code class="lang-ts"><span class="hljs-keyword">interface</span> Iterator {
+  next(): IteratorResult;
+  <span class="hljs-keyword">return</span>?(): IteratorResult; <span class="hljs-comment">//  &#x53EF;&#x9009;; &#x901A;&#x5E38;&#x5728;&#x8C03;&#x7528;&#x8005;&#x5E0C;&#x671B;&#x63D0;&#x524D;&#x7ED3;&#x675F;&#x8FED;&#x4EE3;&#x65F6;&#x8C03;&#x7528;</span>
+  <span class="hljs-keyword">throw</span>?(): IteratorResult; <span class="hljs-comment">// &#x53EF;&#x9009;; &#x901A;&#x5E38;&#x5728;&#x8C03;&#x7528;&#x8005;&#x68C0;&#x6D4B;&#x5230;&#x9519;&#x8BEF;&#x65F6;&#x8C03;&#x7528;</span>
+}
+
+<span class="hljs-keyword">interface</span> IteratorResult {
+  done: <span class="hljs-built_in">boolean</span>; <span class="hljs-comment">//  &#x662F;&#x5426;&#x8FED;&#x4EE3;&#x5B8C;&#x6210;</span>
+  value: <span class="hljs-built_in">any</span>; <span class="hljs-comment">// &#x8FED;&#x4EE3;&#x672A;&#x5B8C;&#x6210;&#x65F6;, &#x8FD4;&#x56DE;&#x5F53;&#x524D;&#x8FED;&#x4EE3;&#x5143;&#x7D20;; &#x8FED;&#x4EE3;&#x5B8C;&#x6210;&#x65F6;, &#x8FD4;&#x56DE;&#x8FED;&#x4EE3;&#x5668;&#x8FD4;&#x56DE;&#x503C;&#x6216;&#x7F3A;&#x7701;</span>
+}
+</code></pre>
+<h3 id="&#x5E38;&#x7528;&#x53EF;&#x8FED;&#x4EE3;&#x5BF9;&#x8C61;">&#x5E38;&#x7528;&#x53EF;&#x8FED;&#x4EE3;&#x5BF9;&#x8C61;</h3>
+<p><code>Array</code>, <code>arguments</code>, <code>Set</code>, <code>Generator</code>, <code>Map</code>, <code>String</code>, <code>TypedArray</code></p>
+<p>&#x901A;&#x8FC7;&#x5B9E;&#x73B0;&#x53EF;&#x8FED;&#x4EE3;&#x534F;&#x8BAE;; &#x6211;&#x4EEC;&#x4E5F;&#x53EF;&#x4EE5;&#x81EA;&#x884C;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x53EF;&#x8FED;&#x4EE3;&#x5BF9;&#x8C61;</p>
+<pre><code class="lang-js"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Foo</span> </span>{
+  <span class="hljs-keyword">constructor</span>(items) {
+    <span class="hljs-keyword">this</span>.items = items;
+  }
+  [<span class="hljs-built_in">Symbol</span>.iterator]() {
+    <span class="hljs-keyword">let</span> index = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">const</span> { items } = <span class="hljs-keyword">this</span>;
+    <span class="hljs-keyword">return</span> {
+      next() {
+        <span class="hljs-keyword">const</span> item = items[index++];
+        <span class="hljs-keyword">if</span> (item) {
+          <span class="hljs-keyword">return</span> { value: item, done: <span class="hljs-literal">false</span> };
+        } <span class="hljs-keyword">else</span> {
+          <span class="hljs-keyword">return</span> { done: <span class="hljs-literal">true</span> };
+        }
+      },
+    };
+  }
+}
+
+<span class="hljs-keyword">const</span> foo = <span class="hljs-keyword">new</span> Foo([<span class="hljs-string">&apos;a&apos;</span>, <span class="hljs-string">&apos;b&apos;</span>, <span class="hljs-string">&apos;c&apos;</span>]);
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> item <span class="hljs-keyword">of</span> foo) {
+  <span class="hljs-built_in">console</span>.log(item);
+}
+</code></pre>
+<h3 id="&#x5B9E;&#x9645;&#x5E94;&#x7528;">&#x5B9E;&#x9645;&#x5E94;&#x7528;</h3>
+<ol>
+<li>&#x62D3;&#x5C55;&#x8FD0;&#x7B97;&#x7B26;</li>
+</ol>
+<pre><code class="lang-js"><span class="hljs-comment">// &#x62D3;&#x5C55;&#x8FD0;&#x7B97;&#x7B26;&#x8BED;&#x6CD5;&#x5185;&#x90E8;&#x4E5F;&#x57FA;&#x4E8E; Iterator</span>
+<span class="hljs-keyword">const</span> arr = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>];
+<span class="hljs-built_in">console</span>.log(...arr); <span class="hljs-comment">// 1 2 3</span>
+</code></pre>
+<p>&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x6D45;&#x590D;&#x5236;&#x6570;&#x7EC4;; &#x5C06;&#x5B57;&#x7B26;&#x4E32;&#x8F6C;&#x4E3A;&#x6570;&#x7EC4;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> arr = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>];
+<span class="hljs-keyword">const</span> arr2 = [...arr];
+arr1 === arr2; <span class="hljs-comment">// false</span>
+
+<span class="hljs-keyword">const</span> str = <span class="hljs-string">&apos;abc&apos;</span>;
+<span class="hljs-keyword">const</span> arr = [...str]; <span class="hljs-comment">// [&apos;a&apos;, &apos;b&apos;, &apos;c&apos;]</span>
+</code></pre>
+<ol>
+<li>&#x5B57;&#x7B26;&#x4E32;&#x5904;&#x7406;</li>
+</ol>
+<pre><code class="lang-js"><span class="hljs-comment">// emoji  &#x5305;&#x542B;&#x8FDE;&#x4E2A;&#x5B57;&#x7B26;&#x957F;&#x5EA6;;</span>
+<span class="hljs-keyword">const</span> str = <span class="hljs-string">&apos;&#x5929;&#x6C14;&#x6674;&#x1F31E;&apos;</span>;
+
+<span class="hljs-comment">// emoji  &#x5305;&#x542B;&#x8FDE;&#x4E2A;&#x5B57;&#x7B26;&#x957F;&#x5EA6;; &#x4F1A;&#x88AB;&#x62C6;&#x5206;</span>
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; str.length; i++) {
+  <span class="hljs-built_in">console</span>.log(str[i]); <span class="hljs-comment">// &apos;&#x5929;&apos; &apos;&#x6C14;&apos; &apos;&#x6674;&apos; &apos;&#xFFFD;&apos; &apos;&#xFFFD;&apos;</span>
+}
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> item <span class="hljs-keyword">of</span> str) {
+  <span class="hljs-built_in">console</span>.log(item); <span class="hljs-comment">// &apos;&#x5929;&apos; &apos;&#x6C14;&apos; &apos;&#x6674;&apos; &apos;&#x1F31E;&apos;</span>
+}
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="26-promise.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 26-promise">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"27-iterator","date":"2018-05-23T20:54:43.000Z","level":"1.2.1.13","depth":3,"next":{"title":"页面架构","level":"1.3","depth":1,"ref":"","articles":[{"title":"CSS Reset","level":"1.3.1","depth":2,"path":"页面架构/CSS-Reset.md","ref":"页面架构/CSS-Reset.md","articles":[]},{"title":"布局解决方案","level":"1.3.2","depth":2,"ref":"","articles":[{"title":"居中布局","level":"1.3.2.1","depth":3,"path":"页面架构/布局解决方案/居中布局.md","ref":"页面架构/布局解决方案/居中布局.md","articles":[]},{"title":"多列布局","level":"1.3.2.2","depth":3,"path":"页面架构/布局解决方案/多列布局.md","ref":"页面架构/布局解决方案/多列布局.md","articles":[]},{"title":"模块与组件","level":"1.3.2.3","depth":3,"path":"页面架构/布局解决方案/模块与组件.md","ref":"页面架构/布局解决方案/模块与组件.md","articles":[]}]}]},"previous":{"title":"26-promise","level":"1.2.1.12","depth":3,"path":"JavaScript程序设计/数据类型/26-promise.md","ref":"JavaScript程序设计/数据类型/26-promise.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","editlink","sharing","expandable-chapters"],"root":"./docs","styles":{"website":"styles/website.css"},"pluginsConfig":{"github":{"url":"https://github.com/yingyuk/frontend-tutoriall"},"editlink":{"label":"编辑本页","multilingual":false,"base":"https://github.com/yingyuk/frontend-tutoriall/edit/master/docs/"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":false,"google":false,"instapaper":false,"twitter":false,"vk":false,"weibo":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Bash Tutorial","language":"zh-hans","links":{"sidebar":{"Yingyu Blog":"https://yingyuk.github.io/tags/"}},"gitbook":"*"},"file":{"path":"JavaScript程序设计/数据类型/27-iterator.md","mtime":"2018-06-03T14:43:09.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-03T15:33:10.653Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-editlink/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

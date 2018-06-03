@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>不定宽高的弹窗水平垂直居中</title>
+</head>
+<style>
+  /* reset */
+
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+</style>
+<style>
+  .modal-wrap {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .5);
+  }
+
+  .modal-content {
+    background-color: #fff;
+  }
+</style>
+<style>
+  /* 方案一 */
+
+  /* .modal-content {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  } */
+</style>
+<style>
+  /* 方案二 */
+
+  .modal-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+</style>
+
+<body>
+  <div class="modal-wrap">
+    <div class="modal-content">hello world</div>
+  </div>
+</body>
+
+</html>

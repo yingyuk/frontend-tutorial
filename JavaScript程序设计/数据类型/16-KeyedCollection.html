@@ -1,0 +1,866 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>16-KeyedCollection · Bash Tutorial</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../styles/website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="17-StructuredData.html" />
+    
+    
+    <link rel="prev" href="15-TypedArray.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://yingyuk.github.io/tags/" target="_blank" class="custom-link">Yingyu Blog</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    JavaScript 程序设计
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" >
+            
+                <span>
+            
+                    
+                    数据类型
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" data-path="14-Error.html">
+            
+                <a href="14-Error.html">
+            
+                    
+                    14-Error
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2" data-path="15-TypedArray.html">
+            
+                <a href="15-TypedArray.html">
+            
+                    
+                    15-TypedArray
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.1.3" data-path="16-KeyedCollection.html">
+            
+                <a href="16-KeyedCollection.html">
+            
+                    
+                    16-KeyedCollection
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.4" data-path="17-StructuredData.html">
+            
+                <a href="17-StructuredData.html">
+            
+                    
+                    17-StructuredData
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.5" data-path="18-数据类型进阶.html">
+            
+                <a href="18-数据类型进阶.html">
+            
+                    
+                    18-数据类型进阶
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.6" data-path="20-原型.html">
+            
+                <a href="20-原型.html">
+            
+                    
+                    20-原型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.7" data-path="21-函数进阶.html">
+            
+                <a href="21-函数进阶.html">
+            
+                    
+                    21-函数进阶
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.8" data-path="22-面对对象.html">
+            
+                <a href="22-面对对象.html">
+            
+                    
+                    22-面对对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.9" data-path="23-class基本语法.html">
+            
+                <a href="23-class基本语法.html">
+            
+                    
+                    23-class 基本语法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.10" data-path="24-class继承.html">
+            
+                <a href="24-class继承.html">
+            
+                    
+                    24-class 继承
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.11" data-path="25-modules.html">
+            
+                <a href="25-modules.html">
+            
+                    
+                    25-modules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.12" data-path="26-promise.html">
+            
+                <a href="26-promise.html">
+            
+                    
+                    26-promise
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.13" data-path="27-iterator.html">
+            
+                <a href="27-iterator.html">
+            
+                    
+                    27-iterator
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    页面架构
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../页面架构/CSS-Reset.html">
+            
+                <a href="../../页面架构/CSS-Reset.html">
+            
+                    
+                    CSS Reset
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" >
+            
+                <span>
+            
+                    
+                    布局解决方案
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="../../页面架构/布局解决方案/居中布局.html">
+            
+                <a href="../../页面架构/布局解决方案/居中布局.html">
+            
+                    
+                    居中布局
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.2" data-path="../../页面架构/布局解决方案/多列布局.html">
+            
+                <a href="../../页面架构/布局解决方案/多列布局.html">
+            
+                    
+                    多列布局
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.3" data-path="../../页面架构/布局解决方案/模块与组件.html">
+            
+                <a href="../../页面架构/布局解决方案/模块与组件.html">
+            
+                    
+                    模块与组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    移动端开发
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../移动端开发/2-移动端响应式布局.html">
+            
+                <a href="../../移动端开发/2-移动端响应式布局.html">
+            
+                    
+                    2-移动端响应式布局
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../../移动端开发/3-基于APP的移动端页面开发.html">
+            
+                <a href="../../移动端开发/3-基于APP的移动端页面开发.html">
+            
+                    
+                    3-基于 APP 的移动端页面开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../../移动端开发/4-移动端页面样式进阶.html">
+            
+                <a href="../../移动端开发/4-移动端页面样式进阶.html">
+            
+                    
+                    4-移动端页面样式进阶
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../../移动端开发/5-移动端性能优化.html">
+            
+                <a href="../../移动端开发/5-移动端性能优化.html">
+            
+                    
+                    5-移动端性能优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../../移动端开发/6-移动端坑.html">
+            
+                <a href="../../移动端开发/6-移动端坑.html">
+            
+                    
+                    6-移动端坑
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    单页系统
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" >
+            
+                <span>
+            
+                    
+                    性能优化
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1.1" data-path="../../单页系统/性能优化/15-性能优化.html">
+            
+                <a href="../../单页系统/性能优化/15-性能优化.html">
+            
+                    
+                    15-性能优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.2" data-path="../../单页系统/性能优化/16-执行性能.html">
+            
+                <a href="../../单页系统/性能优化/16-执行性能.html">
+            
+                    
+                    16-执行性能
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >16-KeyedCollection</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="keyedcollection">KeyedCollection</h1>
+<h3 id="map">Map</h3>
+<pre><code class="lang-js"><span class="hljs-comment">// new Map([iterable]);</span>
+<span class="hljs-comment">// &#x63A5;&#x53D7;&#x952E;&#x503C;&#x5BF9;&#x6570;&#x7EC4; &#x7EC4;&#x6210;&#x7684;&#x6570;&#x7EC4;</span>
+
+<span class="hljs-keyword">const</span> a = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Map</span>([
+  [<span class="hljs-number">0</span>, <span class="hljs-string">&apos;zero&apos;</span>],
+  [<span class="hljs-number">1</span>, <span class="hljs-string">&apos;one&apos;</span>],
+  <span class="hljs-comment">// [key, value]</span>
+]);
+</code></pre>
+<ol>
+<li><p>Map &#x4E0E; Object &#x533A;&#x522B;</p>
+<p>| Object                                   | Map                              |
+| ---------------------------------------- | -------------------------------- |
+| &#x952E;&#x503C;&#x53EA;&#x80FD;&#x662F;&#x5B57;&#x7B26;&#x4E32;&#x6216;&#x8005;                     | &#x952E;&#x503C;&#x53EF;&#x4EE5;&#x662F;&#x4EFB;&#x610F;&#x503C;                 |
+| &#x9700;&#x8981;&#x901A;&#x8FC7; for...in &#x8BED;&#x53E5;&#x624B;&#x52A8;&#x83B7;&#x5F97;&#x952E;&#x503C;&#x5BF9;&#x4E2A;&#x6570; | &#x53EF;&#x4EE5;&#x901A;&#x8FC7; size &#x5C5E;&#x6027;&#x83B7;&#x5F97;&#x952E;&#x503C;&#x5BF9;&#x4E2A;&#x6570; |</p>
+</li>
+<li><p>Map &#x539F;&#x578B;&#x65B9;&#x6CD5;</p>
+<ul>
+<li><p>Map.prototype.set(key, value)</p>
+<p>&#x8FD4;&#x56DE;&#x8BE5; Map &#x5BF9;&#x8C61;; &#x53EF;&#x4EE5;&#x94FE;&#x5F0F;&#x8C03;&#x7528;</p>
+</li>
+<li><p>Map.prototype.get(key)</p>
+<p>&#x8FD4;&#x56DE;&#x952E;&#x5BF9;&#x5E94;&#x7684;&#x503C;, &#x5982;&#x679C;&#x4E0D;&#x5B58;&#x5728;, &#x5219;&#x4E3A; undefined;</p>
+</li>
+<li><p>Map.prototype.has(key)</p>
+<p>&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x5E03;&#x5C14;&#x503C;, &#x8868;&#x793A; Map &#x5B9E;&#x4F8B;&#x662F;&#x5426;&#x5305;&#x542B;&#x8FD9;&#x4E2A;&#x952E;&#x503C;;</p>
+</li>
+<li><p>Map.prototype.delete(key)</p>
+<p>&#x79FB;&#x9664;&#x4EFB;&#x4F55;&#x4E0E;&#x952E;&#x76F8;&#x5173;&#x8054;&#x7684;&#x503C;&#xFF0C;&#x5E76;&#x4E14;&#x8FD4;&#x56DE;&#x8BE5;&#x503C;;</p>
+</li>
+<li><p>Map.prototype.clear()</p>
+<p>&#x79FB;&#x9664; Map &#x5BF9;&#x8C61;&#x7684;&#x6240;&#x6709;&#x952E;/&#x503C;&#x5BF9; &#x3002;</p>
+</li>
+<li><p>Map.prototype.forEach(callbackFn[, thisArg])</p>
+<p>&#x6309;&#x63D2;&#x5165;&#x987A;&#x5E8F;&#xFF0C;&#x4E3A; Map &#x5BF9;&#x8C61;&#x91CC;&#x7684;&#x6BCF;&#x4E00;&#x952E;&#x503C;&#x5BF9;&#x8C03;&#x7528;&#x4E00;&#x6B21; callbackFn &#x51FD;&#x6570;&#x3002;&#x5982;&#x679C;&#x4E3A; forEach &#x63D0;&#x4F9B;&#x4E86; thisArg&#xFF0C;&#x5B83;&#x5C06;&#x5728;&#x6BCF;&#x6B21;&#x56DE;&#x8C03;&#x4E2D;&#x4F5C;&#x4E3A; this &#x503C;&#x3002;</p>
+</li>
+<li><p>Map.prototype.entries()</p>
+<p>&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x65B0;&#x7684; Iterator &#x5BF9;&#x8C61;&#xFF0C;&#x5B83;&#x6309;&#x63D2;&#x5165;&#x987A;&#x5E8F;&#x5305;&#x542B;&#x4E86; Map &#x5BF9;&#x8C61;&#x4E2D;&#x6BCF;&#x4E2A;&#x5143;&#x7D20;&#x7684;&#x503C; &#x3002;</p>
+</li>
+<li><p>Map.prototype.keys()</p>
+<p>&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x65B0;&#x7684; Iterator &#x5BF9;&#x8C61;&#xFF0C; &#x5B83;&#x6309;&#x63D2;&#x5165;&#x987A;&#x5E8F;&#x5305;&#x542B;&#x4E86; Map &#x5BF9;&#x8C61;&#x4E2D;&#x6BCF;&#x4E2A;&#x5143;&#x7D20;&#x7684;&#x952E;</p>
+</li>
+<li><p>Map.prototype.size</p>
+<p>&#x8FD4;&#x56DE; Map &#x5BF9;&#x8C61;&#x7684;&#x952E;/&#x503C;&#x5BF9;&#x7684;&#x6570;&#x91CF;&#x3002;</p>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="weakmap">WeakMap</h3>
+<p>WeakMap &#x7684;&#x952E;&#x662F;&#x5F31;&#x5F15;&#x7528;&#x7684;; &#x5B83;&#x7684;&#x952E;&#x662F;&#x5FC5;&#x987B;&#x662F;&#x5BF9;&#x8C61;; &#x800C;&#x503C;&#x53EF;&#x4EE5;&#x662F;&#x4EFB;&#x610F;&#x7684;&#x3002;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">new</span> <span class="hljs-built_in">WeakMap</span>([iterable]);
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>WeakMap</th>
+<th>Map</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&#x952E;&#x540D;&#x53EA;&#x80FD;&#x662F;&#x5BF9;&#x8C61;</td>
+<td>&#x952E;&#x540D;&#x53EF;&#x4EE5;&#x662F;&#x4EFB;&#x610F;&#x503C;</td>
+</tr>
+<tr>
+<td>&#x952E;&#x540D;&#x6240;&#x6307;&#x5411;&#x7684;&#x5BF9;&#x8C61;, <strong>&#x4E0D;&#x8BA1;&#x5165;</strong>&#x5783;&#x573E;&#x56DE;&#x6536;&#x673A;&#x5236;</td>
+<td>&#x8BA1;&#x5165;&#x5783;&#x573E;&#x56DE;&#x6536;&#x673A;&#x5236;</td>
+</tr>
+<tr>
+<td>&#x952E;&#x540D;&#x662F;<strong>&#x975E;&#x679A;&#x4E3E;</strong>&#x7684;</td>
+<td>&#x952E;&#x540D;&#x662F;&#x53EF;&#x679A;&#x4E3E;&#x7684;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x56E0;&#x4E3A;&#x662F;&#x4E0D;&#x8BA1;&#x5165;&#x5783;&#x573E;&#x56DE;&#x6536;&#x673A;&#x5236;; &#x6240;&#x4EE5;&#x662F;&#x975E;&#x679A;&#x4E3E;&#x7684;;
+&#x5982;&#x679C;&#x662F;&#x53EF;&#x679A;&#x4E3E;; &#x952E;&#x88AB;&#x5783;&#x573E;&#x56DE;&#x6536;&#x4E86;; &#x952E;&#x503C;&#x4F1A;&#x53D1;&#x751F;&#x53D8;&#x5316;; &#x4F1A;&#x5F97;&#x5230;&#x4E0D;&#x786E;&#x5B9A;&#x7684;&#x7ED3;&#x679C;, &#x90A3;&#x5C06;&#x4F1A;&#x4EA7;&#x751F;&#x95EE;&#x9898;; &#x6240;&#x4EE5;&#x662F;&#x975E;&#x679A;&#x4E3E;&#x7684;;</p>
+<ol>
+<li><p>&#x5C5E;&#x6027;&#x548C;&#x65B9;&#x6CD5;</p>
+</li>
+<li><p>WeakMap.prototype.delete(key)</p>
+</li>
+</ol>
+<p>&#x79FB;&#x9664; key &#x7684;&#x5173;&#x8054;&#x5BF9;&#x8C61;;</p>
+<ul>
+<li>WeakMap.prototype.get(key)</li>
+</ul>
+<p>&#x8FD4;&#x56DE; key &#x5173;&#x8054;&#x5BF9;&#x8C61;, &#x6216;&#x8005; undefined(&#x6CA1;&#x6709; key &#x5173;&#x8054;&#x5BF9;&#x8C61;&#x65F6;)&#x3002;</p>
+<ul>
+<li>WeakMap.prototype.has(key)</li>
+</ul>
+<p>&#x6839;&#x636E;&#x662F;&#x5426;&#x6709; key &#x5173;&#x8054;&#x5BF9;&#x8C61;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A; Boolean &#x503C;&#x3002;</p>
+<ul>
+<li>WeakMap.prototype.set(key, value)</li>
+</ul>
+<p>&#x5728; WeakMap &#x4E2D;&#x8BBE;&#x7F6E;&#x4E00;&#x7EC4; key &#x5173;&#x8054;&#x5BF9;&#x8C61;&#xFF0C;&#x8FD4;&#x56DE;&#x8FD9;&#x4E2A; WeakMap &#x5BF9;&#x8C61;&#x3002;</p>
+<ol>
+<li>WeakMap &#x7684;&#x4F5C;&#x7528;</li>
+</ol>
+<p>&#x907F;&#x514D;&#x5185;&#x5B58;&#x6CC4;&#x9732;</p>
+<h3 id="set">Set</h3>
+<pre><code class="lang-js"><span class="hljs-comment">// new Set([iterable]);</span>
+<span class="hljs-keyword">const</span> s = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Set</span>([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>]);
+</code></pre>
+<ol>
+<li><p>&#x539F;&#x578B;&#x548C;&#x65B9;&#x6CD5;</p>
+</li>
+<li><p>Set.prototype.size
+&#x8FD4;&#x56DE; Set &#x5BF9;&#x8C61;&#x7684;&#x503C;&#x7684;&#x4E2A;&#x6570;&#x3002;</p>
+</li>
+<li><p>Set.prototype.add(value)
+&#x5728; Set &#x5BF9;&#x8C61;&#x5C3E;&#x90E8;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x3002;&#x8FD4;&#x56DE;&#x8BE5; Set &#x5BF9;&#x8C61;&#x3002;</p>
+</li>
+<li><p>Set.prototype.clear()
+&#x79FB;&#x9664; Set &#x5BF9;&#x8C61;&#x5185;&#x7684;&#x6240;&#x6709;&#x5143;&#x7D20;&#x3002;</p>
+</li>
+<li><p>Set.prototype.delete(value)
+&#x79FB;&#x9664; Set &#x7684;&#x4E2D;&#x4E0E;&#x8FD9;&#x4E2A;&#x503C;&#x76F8;&#x7B49;&#x7684;&#x5143;&#x7D20;&#xFF0C;&#x8FD4;&#x56DE; Set.prototype.has(value);</p>
+</li>
+<li><p>Set.prototype.entries()
+&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x8FED;&#x4EE3;&#x5668;&#x5BF9;&#x8C61;&#xFF0C;&#x8BE5;&#x5BF9;&#x8C61;&#x5305;&#x542B; Set &#x5BF9;&#x8C61;&#x4E2D;&#x7684;&#x6309;&#x63D2;&#x5165;&#x987A;&#x5E8F;&#x6392;&#x5217;&#x7684;&#x6240;&#x6709;&#x5143;&#x7D20;&#x7684;&#x503C;&#x7684;[value, value]&#x6570;&#x7EC4;</p>
+</li>
+<li><p>Set.prototype.has(value)
+&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x5E03;&#x5C14;&#x503C;&#xFF0C;&#x8868;&#x793A;&#x8BE5;&#x503C;&#x5728; Set &#x4E2D;&#x5B58;&#x5728;&#x4E0E;&#x5426;&#x3002;</p>
+</li>
+<li><p>Set.prototype.values()
+&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x8FED;&#x4EE3;&#x5668;&#x5BF9;&#x8C61;</p>
+</li>
+<li><p>Set.prototype.forEach(callbackFn[, thisArg])
+&#x6309;&#x7167;&#x63D2;&#x5165;&#x987A;&#x5E8F;&#xFF0C;&#x4E3A; Set &#x5BF9;&#x8C61;&#x4E2D;&#x7684;&#x6BCF;&#x4E00;&#x4E2A;&#x503C;&#x8C03;&#x7528;&#x4E00;&#x6B21; callBackFn&#x3002;&#x5982;&#x679C;&#x63D0;&#x4F9B;&#x4E86; thisArg &#x53C2;&#x6570;&#xFF0C;&#x56DE;&#x8C03;&#x4E2D;&#x7684; this &#x4F1A;&#x662F;&#x8FD9;&#x4E2A;&#x53C2;&#x6570;&#x3002;</p>
+</li>
+</ol>
+<h3 id="weakset">WeakSet</h3>
+<p>WeakSet &#x5BF9;&#x8C61;&#x5141;&#x8BB8;&#x4F60;&#x5C06;&#x5F31;&#x4FDD;&#x6301;&#x5BF9;&#x8C61;&#x5B58;&#x50A8;&#x5728;&#x4E00;&#x4E2A;&#x96C6;&#x5408;&#x4E2D;&#x3002;</p>
+<pre><code class="lang-js"><span class="hljs-comment">// new WeakSet([iterable]);</span>
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>WeakSet</th>
+<th>Set</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&#x952E;&#x540D;&#x53EA;&#x80FD;&#x662F;&#x5BF9;&#x8C61;</td>
+<td>&#x952E;&#x540D;&#x53EF;&#x4EE5;&#x662F;&#x4EFB;&#x610F;&#x503C;</td>
+</tr>
+<tr>
+<td>&#x952E;&#x540D;&#x6240;&#x6307;&#x5411;&#x7684;&#x5BF9;&#x8C61;, <strong>&#x4E0D;&#x8BA1;&#x5165;</strong>&#x5783;&#x573E;&#x56DE;&#x6536;&#x673A;&#x5236;</td>
+<td>&#x8BA1;&#x5165;&#x5783;&#x573E;&#x56DE;&#x6536;&#x673A;&#x5236;</td>
+</tr>
+<tr>
+<td>&#x952E;&#x540D;&#x662F;<strong>&#x975E;&#x679A;&#x4E3E;</strong>&#x7684;</td>
+<td>&#x952E;&#x540D;&#x662F;&#x53EF;&#x679A;&#x4E3E;&#x7684;</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li><p>WeakSet &#x7684;&#x65B9;&#x6CD5;</p>
+</li>
+<li><p>WeakSet.prototype.add(value)
+&#x5728;&#x8BE5; WeakSet &#x5BF9;&#x8C61;&#x4E2D;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x65B0;&#x5143;&#x7D20; value.</p>
+</li>
+<li><p>WeakSet.prototype.clear()
+&#x6E05;&#x7A7A;&#x8BE5; WeakSet &#x5BF9;&#x8C61;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x5143;&#x7D20;.</p>
+</li>
+<li><p>WeakSet.prototype.delete(value)
+&#x4ECE;&#x8BE5; WeakSet &#x5BF9;&#x8C61;&#x4E2D;&#x5220;&#x9664; value &#x8FD9;&#x4E2A;&#x5143;&#x7D20;, &#x4E4B;&#x540E; WeakSet.prototype.has(value) &#x65B9;&#x6CD5;&#x4FBF;&#x4F1A;&#x8FD4;&#x56DE; false.</p>
+</li>
+<li><p>WeakSet.prototype.has(value)
+&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x5E03;&#x5C14;&#x503C;, &#x8868;&#x793A;&#x7ED9;&#x5B9A;&#x7684;&#x503C; value &#x662F;&#x5426;&#x5B58;&#x5728;&#x4E8E;&#x8FD9;&#x4E2A; WeakSet &#x4E2D;.</p>
+</li>
+</ol>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="15-TypedArray.html" class="navigation navigation-prev " aria-label="Previous page: 15-TypedArray">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="17-StructuredData.html" class="navigation navigation-next " aria-label="Next page: 17-StructuredData">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"16-KeyedCollection","date":"2018-05-14T21:25:52.000Z","level":"1.2.1.3","depth":3,"next":{"title":"17-StructuredData","level":"1.2.1.4","depth":3,"path":"JavaScript程序设计/数据类型/17-StructuredData.md","ref":"JavaScript程序设计/数据类型/17-StructuredData.md","articles":[]},"previous":{"title":"15-TypedArray","level":"1.2.1.2","depth":3,"path":"JavaScript程序设计/数据类型/15-TypedArray.md","ref":"JavaScript程序设计/数据类型/15-TypedArray.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","editlink","sharing","expandable-chapters"],"root":"./docs","styles":{"website":"styles/website.css"},"pluginsConfig":{"github":{"url":"https://github.com/yingyuk/frontend-tutoriall"},"editlink":{"label":"编辑本页","multilingual":false,"base":"https://github.com/yingyuk/frontend-tutoriall/edit/master/docs/"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":false,"google":false,"instapaper":false,"twitter":false,"vk":false,"weibo":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Bash Tutorial","language":"zh-hans","links":{"sidebar":{"Yingyu Blog":"https://yingyuk.github.io/tags/"}},"gitbook":"*"},"file":{"path":"JavaScript程序设计/数据类型/16-KeyedCollection.md","mtime":"2018-06-03T14:43:09.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-03T15:33:10.653Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-editlink/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

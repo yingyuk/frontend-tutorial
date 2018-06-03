@@ -1,0 +1,949 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>多列布局 · Bash Tutorial</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../styles/website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="模块与组件.html" />
+    
+    
+    <link rel="prev" href="居中布局.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://yingyuk.github.io/tags/" target="_blank" class="custom-link">Yingyu Blog</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    JavaScript 程序设计
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" >
+            
+                <span>
+            
+                    
+                    数据类型
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" data-path="../../JavaScript程序设计/数据类型/14-Error.html">
+            
+                <a href="../../JavaScript程序设计/数据类型/14-Error.html">
+            
+                    
+                    14-Error
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2" data-path="../../JavaScript程序设计/数据类型/15-TypedArray.html">
+            
+                <a href="../../JavaScript程序设计/数据类型/15-TypedArray.html">
+            
+                    
+                    15-TypedArray
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.3" data-path="../../JavaScript程序设计/数据类型/16-KeyedCollection.html">
+            
+                <a href="../../JavaScript程序设计/数据类型/16-KeyedCollection.html">
+            
+                    
+                    16-KeyedCollection
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.4" data-path="../../JavaScript程序设计/数据类型/17-StructuredData.html">
+            
+                <a href="../../JavaScript程序设计/数据类型/17-StructuredData.html">
+            
+                    
+                    17-StructuredData
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.5" data-path="../../JavaScript程序设计/数据类型/18-数据类型进阶.html">
+            
+                <a href="../../JavaScript程序设计/数据类型/18-数据类型进阶.html">
+            
+                    
+                    18-数据类型进阶
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.6" data-path="../../JavaScript程序设计/数据类型/20-原型.html">
+            
+                <a href="../../JavaScript程序设计/数据类型/20-原型.html">
+            
+                    
+                    20-原型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.7" data-path="../../JavaScript程序设计/数据类型/21-函数进阶.html">
+            
+                <a href="../../JavaScript程序设计/数据类型/21-函数进阶.html">
+            
+                    
+                    21-函数进阶
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.8" data-path="../../JavaScript程序设计/数据类型/22-面对对象.html">
+            
+                <a href="../../JavaScript程序设计/数据类型/22-面对对象.html">
+            
+                    
+                    22-面对对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.9" data-path="../../JavaScript程序设计/数据类型/23-class基本语法.html">
+            
+                <a href="../../JavaScript程序设计/数据类型/23-class基本语法.html">
+            
+                    
+                    23-class 基本语法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.10" data-path="../../JavaScript程序设计/数据类型/24-class继承.html">
+            
+                <a href="../../JavaScript程序设计/数据类型/24-class继承.html">
+            
+                    
+                    24-class 继承
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.11" data-path="../../JavaScript程序设计/数据类型/25-modules.html">
+            
+                <a href="../../JavaScript程序设计/数据类型/25-modules.html">
+            
+                    
+                    25-modules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.12" data-path="../../JavaScript程序设计/数据类型/26-promise.html">
+            
+                <a href="../../JavaScript程序设计/数据类型/26-promise.html">
+            
+                    
+                    26-promise
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.13" data-path="../../JavaScript程序设计/数据类型/27-iterator.html">
+            
+                <a href="../../JavaScript程序设计/数据类型/27-iterator.html">
+            
+                    
+                    27-iterator
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    页面架构
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../CSS-Reset.html">
+            
+                <a href="../CSS-Reset.html">
+            
+                    
+                    CSS Reset
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" >
+            
+                <span>
+            
+                    
+                    布局解决方案
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="居中布局.html">
+            
+                <a href="居中布局.html">
+            
+                    
+                    居中布局
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.2.2" data-path="多列布局.html">
+            
+                <a href="多列布局.html">
+            
+                    
+                    多列布局
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.3" data-path="模块与组件.html">
+            
+                <a href="模块与组件.html">
+            
+                    
+                    模块与组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    移动端开发
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../移动端开发/2-移动端响应式布局.html">
+            
+                <a href="../../移动端开发/2-移动端响应式布局.html">
+            
+                    
+                    2-移动端响应式布局
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../../移动端开发/3-基于APP的移动端页面开发.html">
+            
+                <a href="../../移动端开发/3-基于APP的移动端页面开发.html">
+            
+                    
+                    3-基于 APP 的移动端页面开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../../移动端开发/4-移动端页面样式进阶.html">
+            
+                <a href="../../移动端开发/4-移动端页面样式进阶.html">
+            
+                    
+                    4-移动端页面样式进阶
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../../移动端开发/5-移动端性能优化.html">
+            
+                <a href="../../移动端开发/5-移动端性能优化.html">
+            
+                    
+                    5-移动端性能优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../../移动端开发/6-移动端坑.html">
+            
+                <a href="../../移动端开发/6-移动端坑.html">
+            
+                    
+                    6-移动端坑
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    单页系统
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" >
+            
+                <span>
+            
+                    
+                    性能优化
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1.1" data-path="../../单页系统/性能优化/15-性能优化.html">
+            
+                <a href="../../单页系统/性能优化/15-性能优化.html">
+            
+                    
+                    15-性能优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.2" data-path="../../单页系统/性能优化/16-执行性能.html">
+            
+                <a href="../../单页系统/性能优化/16-执行性能.html">
+            
+                    
+                    16-执行性能
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >多列布局</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x591A;&#x5217;&#x5E03;&#x5C40;">&#x591A;&#x5217;&#x5E03;&#x5C40;</h1>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;parent&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;left&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>left<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;right&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>right<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>right<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+<h3 id="&#x5B9A;&#x5BBD;--&#x81EA;&#x9002;&#x5E94;">&#x5B9A;&#x5BBD; + &#x81EA;&#x9002;&#x5E94;</h3>
+<ul>
+<li>float + margin</li>
+</ul>
+<pre><code class="lang-css"><span class="hljs-selector-class">.left</span> {
+  <span class="hljs-attribute">float</span>: left;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">100px</span>;
+}
+<span class="hljs-selector-class">.right</span> {
+  <span class="hljs-comment">/* &#x8BBE;&#x7F6E;&#x95F4;&#x8DDD; */</span>
+  <span class="hljs-attribute">margin-left</span>: <span class="hljs-number">120px</span>;
+}
+</code></pre>
+<ul>
+<li>float + overflow</li>
+</ul>
+<pre><code class="lang-css"><span class="hljs-selector-class">.left</span> {
+  <span class="hljs-attribute">float</span>: left;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">100px</span>;
+  <span class="hljs-comment">/* &#x8BBE;&#x7F6E;&#x95F4;&#x8DDD; */</span>
+  <span class="hljs-attribute">margin-right</span>: <span class="hljs-number">20px</span>;
+}
+<span class="hljs-selector-class">.right</span> {
+  <span class="hljs-attribute">overflow</span>: hidden;
+}
+</code></pre>
+<p>overflow &#x89E6;&#x53D1; BFC &#x5B9E;&#x73B0;&#x591A;&#x5217;&#x5E03;&#x5C40;;</p>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Block_formatting_context" target="_blank">BFC &#x8BF4;&#x660E;</a></p>
+<ul>
+<li>table</li>
+</ul>
+<pre><code class="lang-css"><span class="hljs-selector-class">.parent</span> {
+  <span class="hljs-attribute">display</span>: table;
+  <span class="hljs-comment">/* table &#x9ED8;&#x8BA4;&#x662F;&#x5185;&#x5BB9;&#x5BBD;&#x5EA6;, &#x8FD9;&#x91CC;&#x91CD;&#x8BBE;&#x5BBD;&#x5EA6; */</span>
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
+  <span class="hljs-attribute">table-layout</span>: fixed;
+  <span class="hljs-comment">/* table &#x5373;&#x4FBF;&#x4F60;&#x8BBE;&#x7F6E;&#x4E86;&#x5BBD;&#x5EA6;, &#x4E5F;&#x53EF;&#x80FD;&#x88AB;&#x5185;&#x5BB9;&#x6491;&#x5F00;, &#x8FD9;&#x91CC;&#x89E6;&#x53D1; table &#x7684;&#x5E03;&#x5C40;&#x4F18;&#x5148; */</span>
+}
+<span class="hljs-selector-class">.left</span>,
+<span class="hljs-selector-class">.right</span> {
+  <span class="hljs-attribute">display</span>: table-cell;
+}
+<span class="hljs-selector-class">.left</span> {
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">100px</span>;
+  <span class="hljs-comment">/* table-cell &#x65E0;&#x6CD5;&#x8BBE;&#x7F6E; margin */</span>
+  <span class="hljs-attribute">padding-right</span>: <span class="hljs-number">20px</span>;
+}
+</code></pre>
+<ul>
+<li>flex</li>
+</ul>
+<pre><code class="lang-css"><span class="hljs-selector-class">.parent</span> {
+  <span class="hljs-attribute">display</span>: flex;
+}
+<span class="hljs-selector-class">.left</span> {
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">100px</span>;
+  <span class="hljs-attribute">margin-right</span>: <span class="hljs-number">20px</span>;
+}
+<span class="hljs-selector-class">.right</span> {
+  <span class="hljs-attribute">flex</span>: <span class="hljs-number">1</span>;
+}
+</code></pre>
+<h3 id="&#x4E0D;&#x5B9A;&#x5BBD;--&#x81EA;&#x9002;&#x5E94;">&#x4E0D;&#x5B9A;&#x5BBD; + &#x81EA;&#x9002;&#x5E94;</h3>
+<ul>
+<li>float + overflow</li>
+</ul>
+<pre><code class="lang-css"><span class="hljs-selector-class">.left</span> {
+  <span class="hljs-attribute">float</span>: left;
+  <span class="hljs-attribute">margin-right</span>: <span class="hljs-number">20px</span>;
+}
+<span class="hljs-selector-class">.right</span> {
+  <span class="hljs-attribute">overflow</span>: hidden;
+}
+</code></pre>
+<ul>
+<li>table</li>
+</ul>
+<pre><code class="lang-css"><span class="hljs-selector-class">.parent</span> {
+  <span class="hljs-attribute">display</span>: table;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
+}
+<span class="hljs-selector-class">.left</span>,
+<span class="hljs-selector-class">.right</span> {
+  <span class="hljs-attribute">display</span>: table-cell;
+}
+<span class="hljs-selector-class">.left</span> {
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">0.1%</span>;
+  <span class="hljs-attribute">padding-right</span>: <span class="hljs-number">20px</span>;
+}
+</code></pre>
+<p>table &#x662F;&#x6839;&#x636E;&#x5185;&#x5BB9;&#x6765;&#x5206;&#x914D;&#x5BBD;&#x5EA6;&#x7684;, &#x7531;&#x4E8E; <code>left</code> &#x6BD4; <code>right</code> &#x5C11;&#x4E86;&#x4E00;&#x4E2A;&#x5B57;&#x6BCD;; &#x6240;&#x4EE5;&#x5DE6;&#x8FB9;&#x4F1A;&#x6BD4;&#x53F3;&#x8FB9;&#x7A84;&#x4E00;&#x4E9B;;
+&#x4E3A;&#x4E86;&#x4F7F;&#x5DE6;&#x8FB9;&#x4E3A;&#x5185;&#x5BB9;&#x81EA;&#x8EAB;&#x5BBD;&#x5EA6;; &#x9700;&#x8981;&#x7ED9;&#x5DE6;&#x8FB9;&#x7684;&#x5143;&#x7D20;&#x8BBE;&#x7F6E;&#x4E00;&#x4E2A;&#x6781;&#x5C0F;&#x7684;&#x5BBD;&#x5EA6;, &#x6BD4;&#x5982; <code>1px</code>, <code>0.1%</code> &#x7B49;&#x7B49;;
+&#x6CE8;&#x610F;&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#x4E0D;&#x8981;&#x8BBE;&#x7F6E; <code>table-layout: fixed;</code>; &#x8FD9;&#x6837;&#x5C31;&#x4F1A;&#x9ED8;&#x8BA4;&#x5185;&#x5BB9;&#x4F18;&#x5148;;</p>
+<ul>
+<li>flex</li>
+</ul>
+<pre><code class="lang-css"><span class="hljs-selector-class">.parent</span> {
+  <span class="hljs-attribute">display</span>: flex;
+}
+<span class="hljs-selector-class">.left</span> {
+  <span class="hljs-attribute">margin-right</span>: <span class="hljs-number">20px</span>;
+}
+<span class="hljs-selector-class">.right</span> {
+  <span class="hljs-attribute">flex</span>: <span class="hljs-number">1</span>;
+}
+</code></pre>
+<h3 id="&#x7B49;&#x5BBD;&#x5E03;&#x5C40;">&#x7B49;&#x5BBD;&#x5E03;&#x5C40;</h3>
+<ul>
+<li>float</li>
+</ul>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;parent&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;column&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;column&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;column&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>3<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;column&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>4<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+<pre><code class="lang-css"><span class="hljs-selector-class">.parent</span> {
+  <span class="hljs-attribute">margin-left</span>: -<span class="hljs-number">20px</span>;
+}
+<span class="hljs-selector-class">.column</span> {
+  <span class="hljs-attribute">float</span>: left;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">25%</span>;
+  <span class="hljs-attribute">padding-left</span>: <span class="hljs-number">20px</span>;
+  <span class="hljs-attribute">box-sizing</span>: border-box;
+}
+</code></pre>
+<ul>
+<li>table</li>
+</ul>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;parent-fix&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;parent&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;column&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;column&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;column&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>3<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;column&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>4<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+<pre><code class="lang-css"><span class="hljs-selector-class">.parent-fix</span> {
+  <span class="hljs-attribute">margin-left</span>: -<span class="hljs-number">20px</span>;
+}
+<span class="hljs-selector-class">.parent</span> {
+  <span class="hljs-attribute">display</span>: table;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
+  <span class="hljs-attribute">table-layout</span>: fixed;
+}
+<span class="hljs-selector-class">.column</span> {
+  <span class="hljs-attribute">display</span>: table-cell;
+  <span class="hljs-attribute">padding-left</span>: <span class="hljs-number">20px</span>;
+}
+</code></pre>
+<p>&#x4E4B;&#x6240;&#x4EE5;&#x6DFB;&#x52A0; <code>parent-fix</code> &#x662F;&#x4E3A;&#x4E86;&#x7ED9; parent &#x8BBE;&#x7F6E;&#x53C2;&#x8003;&#x5143;&#x7D20;;</p>
+<ul>
+<li>flex</li>
+</ul>
+<pre><code class="lang-css"><span class="hljs-selector-class">.parent</span> {
+  <span class="hljs-attribute">display</span>: flex;
+}
+<span class="hljs-selector-class">.column</span> {
+  <span class="hljs-attribute">flex</span>: <span class="hljs-number">1</span>;
+}
+<span class="hljs-selector-class">.column</span> ~ <span class="hljs-selector-class">.column</span> {
+  <span class="hljs-attribute">margin-left</span>: <span class="hljs-number">20px</span>;
+}
+</code></pre>
+<h3 id="&#x7B49;&#x9AD8;&#x5E03;&#x5C40;">&#x7B49;&#x9AD8;&#x5E03;&#x5C40;</h3>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;parent&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;left&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>left<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;right&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>right<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>right<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+<ul>
+<li>table</li>
+</ul>
+<pre><code class="lang-css"><span class="hljs-selector-class">.parent</span> {
+  <span class="hljs-attribute">display</span>: table;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
+  <span class="hljs-attribute">table-layout</span>: fixed;
+}
+<span class="hljs-selector-class">.left</span>,
+<span class="hljs-selector-class">.right</span> {
+  <span class="hljs-attribute">display</span>: table-cell;
+}
+<span class="hljs-selector-class">.left</span> {
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">100px</span>;
+  <span class="hljs-attribute">border-right</span>: <span class="hljs-number">20px</span> solid transparent;
+  <span class="hljs-attribute">background-clip</span>: padding-box;
+}
+</code></pre>
+<ul>
+<li>flex</li>
+</ul>
+<pre><code class="lang-css"><span class="hljs-selector-class">.parent</span> {
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-comment">/* align-items: stretch; */</span>
+}
+<span class="hljs-selector-class">.left</span> {
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">100px</span>;
+  <span class="hljs-attribute">margin-right</span>: <span class="hljs-number">20px</span>;
+}
+<span class="hljs-selector-class">.right</span> {
+  <span class="hljs-attribute">flex</span>: <span class="hljs-number">1</span>;
+}
+</code></pre>
+<p><code>align-items: stretch;</code> &#x9ED8;&#x8BA4;&#x662F;&#x62C9;&#x4F38;&#x72B6;&#x6001;</p>
+<ul>
+<li>float</li>
+</ul>
+<pre><code class="lang-css"><span class="hljs-selector-class">.left</span> {
+  <span class="hljs-attribute">float</span>: left;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">100px</span>;
+  <span class="hljs-attribute">margin-right</span>: <span class="hljs-number">20px</span>;
+}
+<span class="hljs-selector-class">.right</span> {
+  <span class="hljs-attribute">overflow</span>: hidden;
+}
+<span class="hljs-selector-class">.left</span>,
+<span class="hljs-selector-class">.right</span> {
+  <span class="hljs-attribute">padding-bottom</span>: <span class="hljs-number">999px</span>;
+  <span class="hljs-attribute">margin-bottom</span>: -<span class="hljs-number">999px</span>;
+}
+<span class="hljs-selector-class">.parent</span> {
+  <span class="hljs-attribute">overflow</span>: hidden;
+}
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="居中布局.html" class="navigation navigation-prev " aria-label="Previous page: 居中布局">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="模块与组件.html" class="navigation navigation-next " aria-label="Next page: 模块与组件">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"多列布局","level":"1.3.2.2","depth":3,"next":{"title":"模块与组件","level":"1.3.2.3","depth":3,"path":"页面架构/布局解决方案/模块与组件.md","ref":"页面架构/布局解决方案/模块与组件.md","articles":[]},"previous":{"title":"居中布局","level":"1.3.2.1","depth":3,"path":"页面架构/布局解决方案/居中布局.md","ref":"页面架构/布局解决方案/居中布局.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","editlink","sharing","expandable-chapters"],"root":"./docs","styles":{"website":"styles/website.css"},"pluginsConfig":{"github":{"url":"https://github.com/yingyuk/frontend-tutoriall"},"editlink":{"label":"编辑本页","multilingual":false,"base":"https://github.com/yingyuk/frontend-tutoriall/edit/master/docs/"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":false,"google":false,"instapaper":false,"twitter":false,"vk":false,"weibo":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Bash Tutorial","language":"zh-hans","links":{"sidebar":{"Yingyu Blog":"https://yingyuk.github.io/tags/"}},"gitbook":"*"},"file":{"path":"页面架构/布局解决方案/多列布局.md","mtime":"2018-06-03T14:43:09.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-03T15:33:10.653Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-editlink/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
