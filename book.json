@@ -1,0 +1,25 @@
+{
+  "title": "Bash Tutorial",
+  "language": "zh-hans",
+  "root": "./docs",
+  "links": {
+    "sidebar": {
+      "Yingyu Blog": "https://yingyuk.github.io/tags/"
+    }
+  },
+  "styles": { "website": "styles/website.css" },
+  "plugins": ["github", "editlink", "sharing", "expandable-chapters"],
+  "pluginsConfig": {
+    "github": {
+      "url": "https://github.com/yingyuk/frontend-tutoriall"
+    },
+    "editlink": {
+      "base": "https://github.com/yingyuk/frontend-tutoriall/edit/master/docs/",
+      "label": "编辑本页"
+    },
+    "sharing": {
+      "facebook": false,
+      "twitter": false
+    }
+  }
+}
