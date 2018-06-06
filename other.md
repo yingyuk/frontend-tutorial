@@ -282,20 +282,20 @@ hashchange
 
 1.  性能优化
 
-* 降低请求量
+- 降低请求量
 
   减少传输内容(压缩,首屏内容, webp);
   减少网络请求(合并资源, lazyLoad )
 
-* 加快请求速度
+- 加快请求速度
 
   DNS 预解析, 并行加载; CDN, HTTP2, , 减少网络请求, 缓存,
 
-* 缓存
+- 缓存
 
   HTTP 协议缓存请求 etag, Expires; 离线缓存 manifest, service Workd，离线数据缓存 localStorage。
 
-* 渲染
+- 渲染
 
 JS/CSS 优化,重绘回流; 浏览器绘制 Render Tree, GPU;
 加载顺序;
@@ -308,22 +308,22 @@ webview 内:
 
 1.  传输模型
 
-* DNS 查找;
-* 建立连接
+- DNS 查找;
+- 建立连接
 
 三次握手的好处: 发送方可以确认接收方仍然在线，不会因为白发送而浪费资源;
 原因是 TCP/IP 是全双工;每个方向都必须单独进行开启关闭
 
-* 发送 http 请求;
+- 发送 http 请求;
 
 http 是无连接,无状态的; 每次传输完成后就会断开;
 http/1.1 开始支持 持久连接;
 
-* 服务器发送响应四次挥手;
+- 服务器发送响应四次挥手;
 
 客户端与服务端通过 http 协议通讯;
 
-* 客户端收到文档, 渲染页面;
+- 客户端收到文档, 渲染页面;
 
 HTML 解析 -> DOM Tree
 STYLE 解析 -> Style Rules
@@ -332,38 +332,38 @@ STYLE 解析 -> Style Rules
 
 1.  HTTP
 
-    * 长连接
+    - 长连接
       `HTTP/1.0` 需要使用 `keep-alive` 参数来告知服务器建立长连接，而 `HTTP/1.1` 默认支持长连接，减少了 TCP 连接次数，节约开销。
 
-    * 节约带宽
+    - 节约带宽
 
     `HTTP/1.1` 支持只发送 header 信息(不带任何 body 信息)，如果服务器认为客户端有权限请求服务器，则返回 100，否则返回 401。客户端只有接收到 100，才开始把请求 body 发到服务器。当服务器返回 401 的时候，客户端就可以不用发送请求 body 了，这样节约了带宽。
 
-    * HOST 域
+    - HOST 域
 
       `HTTP/1.1` 支持 host 域，服务端可以通过 host 域设置多个虚拟站点来共享一个 ip 和端口。
 
 1.  HTTP2
 
-    * 多路复用
+    - 多路复用
 
     `HTTP/2.0` 使用多路复用技术，使用一个 TCP 连接并发处理多个请求，不但节约了开销而且可处理请求的数量也比`HTTP/1.1`大了很多。
 
-    * 头部压缩
+    - 头部压缩
 
     HTTP 1.1 不支持 header 数据压缩，HTTP 2.0 使用 HPACK 算法对 header 的数据进行压缩，使得数据传输更快。
 
-    * 服务器推送
+    - 服务器推送
 
     当我们对支持 HTTP 2.0 的服务器请求数据额时候，服务器会顺便把一些客户端需要的资源一起推送到服务器，这种方式适用于加载静态资源，节约带宽
 
 1.  HTTPS
 
-    * HTTP 的缺点
+    - HTTP 的缺点
 
     使用明文通信，内容可能会被窃听不验证通信双方身份，有可能遭遇伪装无法证明报文的完整性，内容可能遭到篡改
 
-    * HTTPS = HTTP + TLS/SSL 加密 + 认证 + 完整性保护
+    - HTTPS = HTTP + TLS/SSL 加密 + 认证 + 完整性保护
 
     HTTPS 过程:
 
@@ -405,11 +405,57 @@ STYLE 解析 -> Style Rules
 clickEvent = document.createEvent('MouseEvents');
 ```
 
-1.  移动端点击穿透
+1.  http 缓存
 
-1.  304 状态码是怎么样，怎么产生的？--》Etag 值怎么产生的？
+    - 强缓存
+      200 from cache
+
+    Expires, Cache-Control, 缓存时间, Etag, Last-Modified;
+
+    Expires: HTTP1.0 规范; GMT 时间;如果发送时间在 Expires 之前,本地缓存始终有效;
+
+    Cache-Control: max-age=number, HTTP1.1; 资源第一次请求时间 + max-age 对比 当前请求时间; 如果请求时间在过期时间之前，就能命中缓存
+
+    no-cache: 不使用本地缓存, 使用缓存协商;
+    no-store: 禁止浏览器缓存资源;
+    public: 可以被所有用户缓存资源,包括终端用户和 cdn, 中间代理服务器;
+    private: 只能被终端用户浏览器缓存;不允许 cdn 等缓存;
+
+    优先级: Cache-Control > Expires
+
+    - 协商缓存
+
+      304 not modified
+
+      Last-modified/if-modified-since;
+      第一次请求资源,服务器返回 最后修改时间;
+      之后再请求资源,浏览器携带 if-modified-since(来自上次的 Last-modified); 服务器根据传来的时间判断资源是否变化;
+      如果没有变,只返回 304,并不返回资源内容,也没有 Last-modified(因为资源没有变动);
+      如果变化了,发送新版的资源,并更新 Last-modified
+
+      Etag/If-None-Match;
+      这两个值是由服务器生成的每个资源的唯一标识字符串，只要资源有变化就这个值就会改变；
+      判断过程类似于 Last-modified; 区别在于 304 时,也会返回 Etag
+
+      Etag 和 Last-modified 的区别
+      Etag 解决了 Last-modified 的一些问题; 1.文件内容没有修改,文件保存时间修改了,这个时候不希望客户端认为文件修改了;
+      2.Last-modified 的细粒度是秒级别的,无法保证获取到的是最新的文件;
+      所以优先级 Etag > Last-modified
+
+1)  移动端点击穿透
+
+产生的原因是, click 比 touchend 慢;
+touchend 触发时,隐藏了被点击的按钮,等 click 触发时,下层的被触发了 click 事件;
+最好是不要同时使用 touch 和 click;
+
+上层元素 用动画隐藏; 或者下层元素 添加 C3 `pointer-events: none`, `pointer-events: auto`
 
 1.  Promise async await; Generator
+
+一个 promise 代表一次异步操作;
+生成后立即执行;
+pengding -> Fulfilled 成功;
+pengding -> Rejected 失败;
 
 1.  cookie , session
 
@@ -438,3 +484,18 @@ jsonp 和 CORS
 1.  判断数组
 
 1.  原型链和作用域链你的理解
+
+1.  合并 HTTP 请求
+
+现在已经是 http2 了;
+
+DNS 解析(T1) -> 建立 TCP 连接(T2) -> 发送请求(T3) -> 等待服务器返回首字节（TTFB）(T4) -> 接收数据(T5)。
+
+浏览器会缓存 DNS 信息，因此不是每次请求都需要 DNS 解析。
+HTTP 1.1 keep-alive 的特性，使 HTTP 请求可以复用已有 TCP 连接，所以并不是每个 HTTP 请求都需要建立新的 TCP 连接。
+浏览器可以并行发送多个 HTTP 请求，同样可能影响到资源的下载时间，而上面的分析显然只是基于同一时刻只有 1 个 HTTP 请求的场景。
+
+对于大文件: HTTP 的传输通道是基于 TCP 连接的，而 TCP 连接具有慢启动的特性，刚开始时并没有充分利用网络带宽，经过慢启动过程后，逐渐占满可利用的带宽。
+大文件的合并加载时间差可以忽略不计;
+
+对于小文件: 多个 HTTP 连接本身就存在额外的资源消耗,每个 HTTP 的 DNS 查询时间、TCP 连接的建立时间等也存在一定的随机性，这就导致并发请求资源时，出现某个 HTTP 耗时明显增加的可能性变大。

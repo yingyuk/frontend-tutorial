@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>27-iterator · 前端之旅</title>
+        <title>28-generator · 前端之旅</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -53,10 +53,8 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="28-generator.html" />
     
-    
-    <link rel="prev" href="26-promise.html" />
+    <link rel="prev" href="27-iterator.html" />
     
 
     </head>
@@ -291,7 +289,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2.1.13" data-path="27-iterator.html">
+        <li class="chapter " data-level="1.2.1.13" data-path="27-iterator.html">
             
                 <a href="27-iterator.html">
             
@@ -304,7 +302,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.1.14" data-path="28-generator.html">
+        <li class="chapter active" data-level="1.2.1.14" data-path="28-generator.html">
             
                 <a href="28-generator.html">
             
@@ -691,7 +689,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >27-iterator</a>
+        <a href="../.." >28-generator</a>
     </h1>
 </div>
 
@@ -706,110 +704,145 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h3 id="&#x53EF;&#x8FED;&#x4EE3;&#x534F;&#x8BAE;">&#x53EF;&#x8FED;&#x4EE3;&#x534F;&#x8BAE;</h3>
-<p>&#x4E3A;&#x5404;&#x79CD;&#x5BF9;&#x8C61;&#x63D0;&#x4F9B;&#x4E86;&#x7EDF;&#x4E00;&#x7684;&#x8BBF;&#x95EE;&#x673A;&#x5236;;</p>
-<pre><code class="lang-js"><span class="hljs-keyword">const</span> arr = [<span class="hljs-string">&apos;a&apos;</span>, <span class="hljs-string">&apos;b&apos;</span>, <span class="hljs-string">&apos;c&apos;</span>];
-
-<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> item <span class="hljs-keyword">of</span> arr) {
-  <span class="hljs-built_in">console</span>.log(item);
+                                <p>generator &#x751F;&#x6210;&#x5668;</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-title">generatorFunc</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">const</span> a = <span class="hljs-keyword">yield</span> <span class="hljs-string">&apos;a&apos;</span>;
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;a is :&apos;</span>, a);
+  <span class="hljs-keyword">yield</span> <span class="hljs-string">&apos;b&apos;</span>;
+  <span class="hljs-keyword">yield</span> <span class="hljs-string">&apos;c&apos;</span>;
 }
+<span class="hljs-keyword">const</span> generatorObj = generatorFunc();
+generatorObj.next(); <span class="hljs-comment">// { value: &apos;a&apos;, done: false }</span>
+generatorObj.next(<span class="hljs-string">&apos;foo&apos;</span>); <span class="hljs-comment">// a is : foo</span>
+<span class="hljs-comment">// { value: &apos;b&apos;, done: false }</span>
+generatorObj.next(); <span class="hljs-comment">// { value: &apos;c&apos;, done: false }</span>
+generatorObj.next(); <span class="hljs-comment">// { value: undefined, done: true }</span>
 </code></pre>
-<p>&#x7528; for of &#x5FAA;&#x73AF;&#x904D;&#x5386;&#x6570;&#x7EC4;&#x65F6;, &#x5185;&#x90E8;&#x5176;&#x5B9E;&#x8C03;&#x7528;&#x4E86;&#x8BE5;&#x6570;&#x7EC4;&#x7684; Iterator;</p>
-<p>&#x6570;&#x7EC4;&#x7684; Iterator &#x662F;&#x901A;&#x8FC7; Symbol.iterator &#x5C5E;&#x6027;&#x751F;&#x6210;&#x7684;;</p>
-<pre><code class="lang-js"><span class="hljs-keyword">const</span> arr = [<span class="hljs-string">&apos;a&apos;</span>, <span class="hljs-string">&apos;b&apos;</span>, <span class="hljs-string">&apos;c&apos;</span>];
-
-<span class="hljs-keyword">const</span> iterator = arr[<span class="hljs-built_in">Symbol</span>.iterator]();
-
-iterator.next(); <span class="hljs-comment">// { value: &apos;a&apos;, done: false}</span>
-iterator.next(); <span class="hljs-comment">// { value: &apos;b&apos;, done: false}</span>
-iterator.next(); <span class="hljs-comment">// { value: &apos;c&apos;, done: false}</span>
-iterator.next(); <span class="hljs-comment">// { value: undefined, done: true}</span>
-</code></pre>
-<p>&#x4EFB;&#x610F;&#x5BF9;&#x8C61;, &#x53EA;&#x8981;&#x5B9E;&#x73B0;&#x4E86;&#x53EF;&#x8FED;&#x4EE3;&#x534F;&#x8BAE;; &#x5B83;&#x7684;&#x5185;&#x90E8;&#x6210;&#x5458;&#x5C31;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x7EDF;&#x4E00;&#x7684;&#x8BED;&#x6CD5;&#x88AB;&#x68C0;&#x7D22;&#x5230;;</p>
-<pre><code class="lang-text">for ... of
-&#x62D3;&#x5C55;&#x8FD0;&#x7B97;&#x7B26;
-&#x89E3;&#x6784;&#x8D4B;&#x503C;
-&#x6570;&#x7EC4;
-&#x5B57;&#x7B26;&#x4E32;
-Map
-
-&#x7B49;&#x7B49;
-</code></pre>
-<pre><code class="lang-ts"><span class="hljs-keyword">interface</span> Iterable {
-  [Symbol.iterator](): Iterator;
+<table>
+<thead>
+<tr>
+<th>&#x666E;&#x901A;&#x51FD;&#x6570;</th>
+<th>Generator &#x51FD;&#x6570;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&#x8BED;&#x6CD5; function(){}</td>
+<td>function * (){}</td>
+</tr>
+<tr>
+<td>&#x4E00;&#x6B21;&#x6267;&#x884C;, &#x4E0D;&#x80FD;&#x6682;&#x505C;</td>
+<td>&#x5206;&#x6BB5;&#x6267;&#x884C;, &#x53EF;&#x6682;&#x505C;</td>
+</tr>
+<tr>
+<td>&#x8FD4;&#x56DE;(return)&#x4E00;&#x4E2A;&#x503C;</td>
+<td>&#x8FD4;&#x56DE;(yield) &#x591A;&#x4E2A;&#x503C;</td>
+</tr>
+</tbody>
+</table>
+<h3 id="generator-&#x5BF9;&#x8C61;">generator &#x5BF9;&#x8C61;</h3>
+<p>next &#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x6062;&#x590D; generator &#x7684;&#x6267;&#x884C;, &#x8FD8;&#x80FD;&#x52A8;&#x6001;&#x7684;&#x4F20;&#x5165;&#x6570;&#x636E;;
+&#x4ECE;&#x800C;&#x8C03;&#x6574; generator &#x7684;&#x6267;&#x884C;;</p>
+<h3 id="generator-&#x4E0E;-iterator">Generator &#x4E0E; Iterator</h3>
+<p>Generator &#x5BF9;&#x8C61; &#x5B9E;&#x73B0;&#x4E86; Iterator &#x7684;&#x63A5;&#x53E3;&#x548C;&#x534F;&#x8BAE;;</p>
+<p>GeneratorOjb.next;
+GeneratorOjb.return;
+GeneratorOjb.throw;</p>
+<p>GeneratorOjb[Sybmol.iterator]</p>
+<p>&#x7531;&#x4E8E; Generator &#x5B9E;&#x73B0;&#x4E86; Sybmol.iterator &#x5C5E;&#x6027;, &#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; for ... of &#x62D3;&#x5C55;&#x8FD0;&#x7B97;&#x7B26;&#x6765;&#x81EA;&#x52A8;&#x6267;&#x884C;&#x5B83;;
+&#x4E0D;&#x9700;&#x8981;&#x624B;&#x52A8;&#x8C03;&#x7528; next &#x65B9;&#x6CD5;;</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-title">generatorFunc</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">yield</span> <span class="hljs-string">&apos;a&apos;</span>;
+  <span class="hljs-keyword">yield</span> <span class="hljs-string">&apos;b&apos;</span>;
+  <span class="hljs-keyword">yield</span> <span class="hljs-string">&apos;c&apos;</span>;
 }
+<span class="hljs-keyword">const</span> generatorObj = generatorFunc();
+<span class="hljs-built_in">console</span>.log(...generatorObj);
+<span class="hljs-comment">// a b c</span>
 </code></pre>
-<h3 id="iterator-&#x63A5;&#x53E3;">Iterator &#x63A5;&#x53E3;</h3>
-<pre><code class="lang-ts"><span class="hljs-keyword">interface</span> Iterator {
-  next(): IteratorResult;
-  <span class="hljs-keyword">return</span>?(): IteratorResult; <span class="hljs-comment">//  &#x53EF;&#x9009;; &#x901A;&#x5E38;&#x5728;&#x8C03;&#x7528;&#x8005;&#x5E0C;&#x671B;&#x63D0;&#x524D;&#x7ED3;&#x675F;&#x8FED;&#x4EE3;&#x65F6;&#x8C03;&#x7528;</span>
-  <span class="hljs-keyword">throw</span>?(): IteratorResult; <span class="hljs-comment">// &#x53EF;&#x9009;; &#x901A;&#x5E38;&#x5728;&#x8C03;&#x7528;&#x8005;&#x68C0;&#x6D4B;&#x5230;&#x9519;&#x8BEF;&#x65F6;&#x8C03;&#x7528;</span>
-}
-
-<span class="hljs-keyword">interface</span> IteratorResult {
-  done: <span class="hljs-built_in">boolean</span>; <span class="hljs-comment">//  &#x662F;&#x5426;&#x8FED;&#x4EE3;&#x5B8C;&#x6210;</span>
-  value: <span class="hljs-built_in">any</span>; <span class="hljs-comment">// &#x8FED;&#x4EE3;&#x672A;&#x5B8C;&#x6210;&#x65F6;, &#x8FD4;&#x56DE;&#x5F53;&#x524D;&#x8FED;&#x4EE3;&#x5143;&#x7D20;; &#x8FED;&#x4EE3;&#x5B8C;&#x6210;&#x65F6;, &#x8FD4;&#x56DE;&#x8FED;&#x4EE3;&#x5668;&#x8FD4;&#x56DE;&#x503C;&#x6216;&#x7F3A;&#x7701;</span>
-}
-</code></pre>
-<h3 id="&#x5E38;&#x7528;&#x53EF;&#x8FED;&#x4EE3;&#x5BF9;&#x8C61;">&#x5E38;&#x7528;&#x53EF;&#x8FED;&#x4EE3;&#x5BF9;&#x8C61;</h3>
-<p><code>Array</code>, <code>arguments</code>, <code>Set</code>, <code>Generator</code>, <code>Map</code>, <code>String</code>, <code>TypedArray</code></p>
-<p>&#x901A;&#x8FC7;&#x5B9E;&#x73B0;&#x53EF;&#x8FED;&#x4EE3;&#x534F;&#x8BAE;; &#x6211;&#x4EEC;&#x4E5F;&#x53EF;&#x4EE5;&#x81EA;&#x884C;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x53EF;&#x8FED;&#x4EE3;&#x5BF9;&#x8C61;</p>
+<h3 id="&#x5E94;&#x7528;&#x573A;&#x666F;-&#x5B9E;&#x73B0;&#x53EF;&#x8FED;&#x4EE3;&#x5BF9;&#x8C61;">&#x5E94;&#x7528;&#x573A;&#x666F;: &#x5B9E;&#x73B0;&#x53EF;&#x8FED;&#x4EE3;&#x5BF9;&#x8C61;</h3>
 <pre><code class="lang-js"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Foo</span> </span>{
   <span class="hljs-keyword">constructor</span>(items) {
     <span class="hljs-keyword">this</span>.items = items;
   }
-  [<span class="hljs-built_in">Symbol</span>.iterator]() {
-    <span class="hljs-keyword">let</span> index = <span class="hljs-number">0</span>;
-    <span class="hljs-keyword">const</span> { items } = <span class="hljs-keyword">this</span>;
-    <span class="hljs-keyword">return</span> {
-      next() {
-        <span class="hljs-keyword">const</span> item = items[index++];
-        <span class="hljs-keyword">if</span> (item) {
-          <span class="hljs-keyword">return</span> { value: item, done: <span class="hljs-literal">false</span> };
-        } <span class="hljs-keyword">else</span> {
-          <span class="hljs-keyword">return</span> { done: <span class="hljs-literal">true</span> };
-        }
-      },
-    };
+  *[<span class="hljs-built_in">Symbol</span>.iterator]() {
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> item <span class="hljs-keyword">of</span> <span class="hljs-keyword">this</span>.items) {
+      <span class="hljs-keyword">yield</span> item;
+    }
   }
 }
-
 <span class="hljs-keyword">const</span> foo = <span class="hljs-keyword">new</span> Foo([<span class="hljs-string">&apos;a&apos;</span>, <span class="hljs-string">&apos;b&apos;</span>, <span class="hljs-string">&apos;c&apos;</span>]);
+<span class="hljs-built_in">console</span>.log(...foo);
+<span class="hljs-comment">// a b c</span>
+</code></pre>
+<h3 id="&#x975E;&#x7EBF;&#x6027;&#x8FED;&#x4EE3;">&#x975E;&#x7EBF;&#x6027;&#x8FED;&#x4EE3;</h3>
+<p>yield * &#x5173;&#x952E;&#x5B57;&#x540E;&#x9762;&#x53EF;&#x4EE5;&#x8DDF;&#x968F;&#x53E6;&#x4E00;&#x4E2A; Generate &#x5BF9;&#x8C61;&#x6216;&#x5176;&#x4ED6;&#x53EF;&#x8FED;&#x4EE3;&#x5BF9;&#x8C61;;
+&#x53EF;&#x4EE5;&#x5229;&#x7528;&#x8FD9;&#x4E2A;&#x7279;&#x6027;&#x5B9E;&#x73B0; &#x975E;&#x7EBF;&#x6027;&#x7ED3;&#x6784;&#x7684;&#x904D;&#x5386;;</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-title">a</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">yield</span> <span class="hljs-string">&apos;a1&apos;</span>;
+  <span class="hljs-keyword">yield</span> <span class="hljs-string">&apos;a2&apos;</span>;
+}
+<span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-title">b</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">yield</span> <span class="hljs-string">&apos;b1&apos;</span>;
+  <span class="hljs-keyword">yield</span>* [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>];
+  <span class="hljs-keyword">yield</span>* a();
+  <span class="hljs-keyword">yield</span> <span class="hljs-string">&apos;b2&apos;</span>;
+}
 
-<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> item <span class="hljs-keyword">of</span> foo) {
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> item <span class="hljs-keyword">of</span> b()) {
   <span class="hljs-built_in">console</span>.log(item);
 }
+<span class="hljs-comment">// b1</span>
+<span class="hljs-comment">// 1</span>
+<span class="hljs-comment">// 2</span>
+<span class="hljs-comment">// a1</span>
+<span class="hljs-comment">// a2</span>
+<span class="hljs-comment">// b2</span>
 </code></pre>
-<h3 id="&#x5B9E;&#x9645;&#x5E94;&#x7528;">&#x5B9E;&#x9645;&#x5E94;&#x7528;</h3>
-<ol>
-<li>&#x62D3;&#x5C55;&#x8FD0;&#x7B97;&#x7B26;</li>
-</ol>
-<pre><code class="lang-js"><span class="hljs-comment">// &#x62D3;&#x5C55;&#x8FD0;&#x7B97;&#x7B26;&#x8BED;&#x6CD5;&#x5185;&#x90E8;&#x4E5F;&#x57FA;&#x4E8E; Iterator</span>
-<span class="hljs-keyword">const</span> arr = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>];
-<span class="hljs-built_in">console</span>.log(...arr); <span class="hljs-comment">// 1 2 3</span>
-</code></pre>
-<p>&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x6D45;&#x590D;&#x5236;&#x6570;&#x7EC4;; &#x5C06;&#x5B57;&#x7B26;&#x4E32;&#x8F6C;&#x4E3A;&#x6570;&#x7EC4;</p>
-<pre><code class="lang-js"><span class="hljs-keyword">const</span> arr = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>];
-<span class="hljs-keyword">const</span> arr2 = [...arr];
-arr1 === arr2; <span class="hljs-comment">// false</span>
+<p>&#x6BD4;&#x5982;&#x4E8C;&#x53C9;&#x6811;&#x7684;&#x5148;&#x5E8F;&#x904D;&#x5386;</p>
+<pre><code class="lang-js"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BinaryTree</span> </span>{
+  <span class="hljs-keyword">constructor</span>(value, leftChild = null, rightChild = null) {
+    <span class="hljs-keyword">this</span>.value = value;
+    <span class="hljs-keyword">this</span>.leftChild = leftChild;
+    <span class="hljs-keyword">this</span>.rightChild = rightChild;
+  }
+  *[<span class="hljs-built_in">Symbol</span>.iterator]() {
+    <span class="hljs-comment">//  &#x904D;&#x5386;&#x5F53;&#x524D;&#x8282;&#x70B9;</span>
+    <span class="hljs-keyword">yield</span> <span class="hljs-keyword">this</span>.value;
 
-<span class="hljs-keyword">const</span> str = <span class="hljs-string">&apos;abc&apos;</span>;
-<span class="hljs-keyword">const</span> arr = [...str]; <span class="hljs-comment">// [&apos;a&apos;, &apos;b&apos;, &apos;c&apos;]</span>
-</code></pre>
-<ol>
-<li>&#x5B57;&#x7B26;&#x4E32;&#x5904;&#x7406;</li>
-</ol>
-<pre><code class="lang-js"><span class="hljs-comment">// emoji  &#x5305;&#x542B;&#x8FDE;&#x4E2A;&#x5B57;&#x7B26;&#x957F;&#x5EA6;;</span>
-<span class="hljs-keyword">const</span> str = <span class="hljs-string">&apos;&#x5929;&#x6C14;&#x6674;&#x1F31E;&apos;</span>;
-
-<span class="hljs-comment">// emoji  &#x5305;&#x542B;&#x8FDE;&#x4E2A;&#x5B57;&#x7B26;&#x957F;&#x5EA6;; &#x4F1A;&#x88AB;&#x62C6;&#x5206;</span>
-<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; str.length; i++) {
-  <span class="hljs-built_in">console</span>.log(str[i]); <span class="hljs-comment">// &apos;&#x5929;&apos; &apos;&#x6C14;&apos; &apos;&#x6674;&apos; &apos;&#xFFFD;&apos; &apos;&#xFFFD;&apos;</span>
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.leftChild) {
+      <span class="hljs-comment">//  &#x904D;&#x5386;&#x5DE6;&#x5B50;&#x6811;</span>
+      <span class="hljs-keyword">yield</span>* <span class="hljs-keyword">this</span>.leftChild;
+    }
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.rightChild) {
+      <span class="hljs-comment">//  &#x904D;&#x5386;&#x53F3;&#x5B50;&#x6811;</span>
+      <span class="hljs-keyword">yield</span>* <span class="hljs-keyword">this</span>.rightChild;
+    }
+  }
 }
-
-<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> item <span class="hljs-keyword">of</span> str) {
-  <span class="hljs-built_in">console</span>.log(item); <span class="hljs-comment">// &apos;&#x5929;&apos; &apos;&#x6C14;&apos; &apos;&#x6674;&apos; &apos;&#x1F31E;&apos;</span>
+</code></pre>
+<h3 id="&#x534F;&#x7A0B;">&#x534F;&#x7A0B;</h3>
+<p>&#x534F;&#x7A0B;: &#x63A7;&#x5236;&#x6743;&#x7684;&#x4E3B;&#x52A8;&#x8BA9;&#x51FA;;</p>
+<p>&#x7A0B;&#x5E8F;&#x81EA;&#x8EAB;&#x53EF;&#x4EE5;&#x63A7;&#x5236;&#x5404;&#x4E2A;&#x5B50;&#x7A0B;&#x5E8F;&#x7684;&#x5207;&#x6362;;
+&#x8BA9;&#x5F02;&#x6B65;&#x4EE3;&#x7801;&#x770B;&#x4E0A;&#x53BB;&#x66F4;&#x52A0;&#x50CF;&#x540C;&#x6B65;&#x4EE3;&#x7801;;</p>
+<pre><code class="lang-js"><span class="hljs-comment">// &#x751F;&#x4EA7;&#x8005;</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-title">producerGen</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">while</span> (<span class="hljs-literal">true</span>) {
+    <span class="hljs-comment">// const data = produceData();</span>
+    <span class="hljs-keyword">const</span> data = <span class="hljs-built_in">Math</span>.random();
+    <span class="hljs-keyword">yield</span> data;
+  }
 }
+<span class="hljs-comment">// &#x6D88;&#x8D39;&#x8005;</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">consumer</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">const</span> producer = producerGen();
+  <span class="hljs-keyword">while</span> (<span class="hljs-literal">true</span>) {
+    data = producer.next().value;
+    <span class="hljs-comment">// todo(data); // &#x5904;&#x7406;&#x6570;&#x636E;</span>
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;data&apos;</span>, data);
+  }
+}
+consumer();
 </code></pre>
 
                                 
@@ -838,14 +871,10 @@ arr1 === arr2; <span class="hljs-comment">// false</span>
 
             
                 
-                <a href="26-promise.html" class="navigation navigation-prev " aria-label="Previous page: 26-promise">
+                <a href="27-iterator.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 27-iterator">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="28-generator.html" class="navigation navigation-next " aria-label="Next page: 28-generator">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -854,7 +883,7 @@ arr1 === arr2; <span class="hljs-comment">// false</span>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"27-iterator","date":"2018-05-23T20:54:43.000Z","level":"1.2.1.13","depth":3,"next":{"title":"28-generator","level":"1.2.1.14","depth":3,"path":"JavaScript程序设计/数据类型/28-generator.md","ref":"JavaScript程序设计/数据类型/28-generator.md","articles":[]},"previous":{"title":"26-promise","level":"1.2.1.12","depth":3,"path":"JavaScript程序设计/数据类型/26-promise.md","ref":"JavaScript程序设计/数据类型/26-promise.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","editlink","sharing","expandable-chapters"],"root":"./docs","styles":{"website":"styles/website.css"},"pluginsConfig":{"github":{"url":"https://github.com/yingyuk/frontend-tutoriall"},"editlink":{"label":"编辑本页","multilingual":false,"base":"https://github.com/yingyuk/frontend-tutoriall/edit/master/docs/"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":false,"google":false,"instapaper":false,"twitter":false,"vk":false,"weibo":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"README.md"},"variables":{},"title":"前端之旅","language":"zh-hans","links":{"sidebar":{"Yingyu Blog":"https://yingyuk.github.io/tags/"}},"gitbook":"*"},"file":{"path":"JavaScript程序设计/数据类型/27-iterator.md","mtime":"2018-06-03T14:43:09.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-06T15:51:31.218Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"28-generator","date":"2018-05-23T20:59:43.000Z","level":"1.2.1.14","depth":3,"next":{"title":"DOM 编程艺术","level":"1.3","depth":1,"ref":"","articles":[{"title":"DOM 基础","level":"1.3.1","depth":2,"ref":"","articles":[{"title":"1-文档树","level":"1.3.1.1","depth":3,"path":"DOM编程艺术/DOM基础/1-文档树.md","ref":"DOM编程艺术/DOM基础/1-文档树.md","articles":[]}]},{"title":"DOM 拓展","level":"1.3.2","depth":2,"ref":"","articles":[{"title":"16-HTTP 协议","level":"1.3.2.1","depth":3,"path":"DOM编程艺术/DOM拓展/16-HTTP协议.md","ref":"DOM编程艺术/DOM拓展/16-HTTP协议.md","articles":[]},{"title":"17-Ajax","level":"1.3.2.2","depth":3,"path":"DOM编程艺术/DOM拓展/17-Ajax.md","ref":"DOM编程艺术/DOM拓展/17-Ajax.md","articles":[]}]}]},"previous":{"title":"27-iterator","level":"1.2.1.13","depth":3,"path":"JavaScript程序设计/数据类型/27-iterator.md","ref":"JavaScript程序设计/数据类型/27-iterator.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","editlink","sharing","expandable-chapters"],"root":"./docs","styles":{"website":"styles/website.css"},"pluginsConfig":{"github":{"url":"https://github.com/yingyuk/frontend-tutoriall"},"editlink":{"label":"编辑本页","multilingual":false,"base":"https://github.com/yingyuk/frontend-tutoriall/edit/master/docs/"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":false,"google":false,"instapaper":false,"twitter":false,"vk":false,"weibo":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"README.md"},"variables":{},"title":"前端之旅","language":"zh-hans","links":{"sidebar":{"Yingyu Blog":"https://yingyuk.github.io/tags/"}},"gitbook":"*"},"file":{"path":"JavaScript程序设计/数据类型/28-generator.md","mtime":"2018-06-06T07:40:46.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-06T15:51:31.218Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
