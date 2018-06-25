@@ -35,11 +35,11 @@ next 方法可以恢复 generator 的执行, 还能动态的传入数据;
 
 Generator 对象 实现了 Iterator 的接口和协议;
 
-GeneratorOjb.next;
-GeneratorOjb.return;
-GeneratorOjb.throw;
+GeneratorObj.next;
+GeneratorObj.return;
+GeneratorObj.throw;
 
-GeneratorOjb[Sybmol.iterator]
+GeneratorObj[Sybmol.iterator]
 
 由于 Generator 实现了 Sybmol.iterator 属性, 我们可以通过 for ... of 拓展运算符来自动执行它;
 不需要手动调用 next 方法;
