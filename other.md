@@ -1257,7 +1257,52 @@ e.right = f;
 f.left = g;
 
 console.log(JSON.stringify(a, null, 2));
+```
 
+先序遍历: 根左右
+a -> b -> c -> d -> e -> f -> g
+
+```js
+function preScan(tree) {
+  if (!tree) return;
+  console.log(tree.val);
+  preScan(tree.left);
+  preScan(tree.right);
+}
+preScan(a);
+```
+
+中序遍历: 左根右
+
+c -> b -> d -> a -> e -> g -> f
+
+```js
+function inScan(tree) {
+  if (!tree) return;
+  inScan(tree.left);
+  console.log(tree.val);
+  inScan(tree.right);
+}
+
+inScan(a);
+```
+
+后序遍历: 左右根
+
+c -> d -> b -> g -> f -> e -> a
+
+```js
+function lastScan(tree) {
+  if (!tree) return;
+  lastScan(tree.left);
+  lastScan(tree.right);
+  console.log(tree.val);
+}
+
+lastScan(a);
+```
+
+```js
 // 翻转树
 function invertTree(root) {
   if (!root) {
@@ -1271,53 +1316,67 @@ function invertTree(root) {
 console.log(JSON.stringify(invertTree(a), null, 2));
 ```
 
-先序遍历: 根左右
-a -> b -> c -> d -> e -> f -> g
-
 ```js
-function first(tree) {
-  if (!tree) return;
-  console.log(tree.val);
-  first(tree.left);
-  first(tree.right);
+/**
+ * 根据 [先序, 中序] 重构二叉树
+ * @param {array} preorder 先序
+ * @param {array} inorder 中序
+ * @returns {object} 二叉树对象
+ */
+function reConstructBinaryTree(preorder, inorder) {
+  if (preorder.length === 0 || inorder.length === 0) {
+    return null;
+  }
+  const [val] = preorder; // 先序的第一个值, 就是根节点
+  // 也是中序左右子树的分割点
+  const index = inorder.indexOf(val); // 切割点为 根节点;
+  const left = inorder.slice(0, index); // 中序左子树
+  const right = inorder.slice(index + 1); // 中序右子树
+  return {
+    val, // 递归左右子树的先序，中序
+    left: reConstructBinaryTree(preorder.slice(1, index + 1), left),
+    right: reConstructBinaryTree(preorder.slice(index + 1), right),
+  };
 }
-first(a);
 ```
 
-中序遍历: 左根右
-
-c -> b -> d -> a -> e -> g -> f
-
 ```js
-function center(tree) {
-  if (!tree) return;
-  return new Promise(async resolve => {
-    await center(tree.left);
-    console.log(tree.val);
-    await center(tree.right);
-    resolve();
-  });
+/**
+ * 获取随机二叉树
+ * 可以用于 编写二叉树测试用例
+ * @param {number} length 二叉树的元素个数
+ * @returns {promise}
+ */
+function getRandomTree(length = 0) {
+  // 闭包 读取 length
+  function getTree() {
+    return new Promise(resolve => {
+      // 延时是为了同时拥有 左右子树
+      setTimeout(async () => {
+        if (length < 1) {
+          return resolve(null);
+        }
+        const random = Math.random();
+        const tree = { val: length-- };
+        let children = [null, null];
+        if (random >= 1 / 3) {
+          // 2/3 的概率有左子树
+          children[0] = getTree();
+        }
+        if (random <= 2 / 3) {
+          // 2/3 的概率有右子树
+          children[1] = getTree();
+        }
+        // 1/3 的概率既有左子树又有右子树
+        const [left, right] = await Promise.all(children);
+        tree.left = left;
+        tree.right = right;
+        resolve(tree);
+      }, 0);
+    });
+  }
+  return getTree();
 }
-
-center(a);
-```
-
-后序遍历: 左右根
-
-c -> d -> b -> g -> f -> e -> a
-
-```js
-function last(tree) {
-  if (!tree) return;
-  return new Promise(async resolve => {
-    await last(tree.left);
-    await last(tree.right);
-    console.log(tree.val);
-    resolve();
-  });
-}
-
-last(a);
 ```
 
 ### 为什么 vue 组件 data 必须是一个函数
@@ -1419,19 +1478,167 @@ JS_TypeOfValue(JSContext *cx, jsval v)
 }
 ```
 
-### jsBridge 原理
-
-### 网络协议
-
-### 兼容性问题
-
-### 数据结构
-
 ### Linux 权限
 
-### 排序
+```bash
+ls -l
+# -rw-r--r--    1 yingyuwu  staff     621 Apr  9 10:26 package.json
+# lrwxr-xr-x   1 yingyuwu  staff       70 Jun 15 18:37 Trader Workstation -> /Users/yingyuwu/App
+# drwxr-xr-x  32 yingyuwu  staff     1088 Jun 15 21:42 lab
+```
+
+`-rwxr--r--` 这十个字符拆成 4 份;
+类型, 所有者, 所在组, 其它组
+
+权限相关:
+r: read;
+w: write
+x: execute
+类型相关:
+d: directory
+l: link
+
+| 字符  | 含义                                                            |
+| ----- | --------------------------------------------------------------- |
+| `-`   | 第一个字符, `-` 代表文件, `d` 目录, `l` 链接                    |
+| `rwx` | user `文件所有者` 的权限是读、写和执行                          |
+| `r--` | group `与文件所有者同一组的用户` 的权限是读; 但不能写和执行     |
+| `r--` | other `不与文件所有者同组的其他用户` 的权限是读; 但不能写和执行 |
+
+转为二进制
+
+| 字符  | 二进制值 | 十进制 |
+| ----- | -------- | ------ |
+| `rwx` | `111`    | 7      |
+| `r-x` | `101`    | 5      |
+| `r--` | `100`    | 4      |
+| `-w-` | `010`    | 2      |
+| `--x` | `001`    | 1      |
+
+chmod 改变文件或目录的权限
+
+```sh
+chmod 755 package.json
+# -rwxr-xr-x    1 yingyuwu  staff     621 Apr  9 10:26 package.json
+```
+
+### width 参数
+
+当 box-sizing: content-box;
+
+```js
+/**
+ * height
+ */
+document.documentElement.clientHeight = '网页可见区域的高';
+element.clientHeight = padding + content;
+
+document.documentElement.offsetHeight = border + padding + content;
+
+// document.documentElement.scrollHeight = margin + border + padding + content;
+element.scrollHeight = padding + content;
+
+// 屏幕高度
+window.screen.height;
+
+// 屏幕可见高度
+window.screen.availHeight;
+
+/**
+ * top
+ */
+document.documentElement.clientTop; // border
+document.documentElement.offsetTop;
+document.documentElement.scrollTop = scrollHeight - clientHeight;
+// offsetTop 是从 margin 开始计算
+window.screenTop;
+```
+
+### webpack VS gulp
+
+gulp 是一个个任务, 构建工具;
+
+webpack 解决了 JS 模块化问题;(模块依赖)
+
+### babel
+
+stage-0, stage-1, stage-2, stage-3
+
+### jsBridge 原理
 
 ### 数组排序
+
+```js
+const input = [1, 2, 3, 4, 3, 2, 1];
+// output:
+// [1, 1, 2, 2, 3, 3, 4];
+```
+
+冒泡排序:
+
+```js
+function bubbleSort(arr) {
+  let len = arr.length;
+  while (len > 0) {
+    for (let i = 0; i < len - 1; i++) {
+      const prev = arr[i];
+      const next = arr[i + 1];
+      if (prev > next) {
+        arr[i] = next;
+        arr[i + 1] = prev;
+      }
+    }
+    len--;
+  }
+  return arr;
+}
+
+// 次数: (N ** 2 - N) / 2;
+// 复杂度:
+```
+
+快速排序:
+
+```js
+function quickSort(array) {
+  function sort(prev, numsize) {
+    var nonius = prev;
+    var j = numsize - 1;
+    var flag = array[prev];
+    if (numsize - prev > 1) {
+      while (nonius < j) {
+        for (; nonius < j; j--) {
+          if (array[j] < flag) {
+            array[nonius++] = array[j]; //a[i] = a[j]; i += 1;
+            break;
+          }
+        }
+        for (; nonius < j; nonius++) {
+          if (array[nonius] > flag) {
+            array[j--] = array[nonius];
+            break;
+          }
+        }
+      }
+      array[nonius] = flag;
+      sort(0, nonius);
+      sort(nonius + 1, numsize);
+    }
+  }
+  sort(0, array.length);
+  return array;
+}
+```
+
+插入排序:
+二分查找:
+选择排序:
+希尔排序:
+归并排序:
+堆排序:
+计数排序:
+桶排序:
+基数排序:
 
 ### Express, Koa; next
 
@@ -1446,3 +1653,13 @@ JS_TypeOfValue(JSContext *cx, jsval v)
 ### 同行布局
 
 ### 装饰器
+
+### target, currentTarget
+
+### XSS
+
+### async, await
+
+### 使用 Vue 哪些东西
+
+### 事件 passive: true
